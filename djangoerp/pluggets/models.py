@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """This file is part of the django ERP project.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -12,11 +13,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-__author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
-__copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
-__version__ = '0.0.1'
-
-
 from django.db import models
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils.text import slugify
@@ -24,6 +20,10 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.translation import ugettext_lazy as _
 from djangoerp.core.models import validate_json
+
+__author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
+__copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
+__version__ = '0.0.1'
 
 
 @python_2_unicode_compatible
@@ -54,6 +54,7 @@ class Region(models.Model):
             pass
         return "/"
 
+
 @python_2_unicode_compatible
 class Plugget(models.Model):
     """A plugget is a graphical element hosted on a Region.
@@ -63,7 +64,8 @@ class Plugget(models.Model):
     description = models.TextField(blank=True, null=True, verbose_name=_('description'))
     source = models.CharField(max_length=256, verbose_name=_('source'))
     template_name = models.CharField(max_length=256, blank=True, verbose_name=_('template'))
-    context = models.TextField(blank=True, null=True, validators=[validate_json], help_text=_('Use the JSON syntax.'), verbose_name=_('context'))
+    context = models.TextField(blank=True, null=True, validators=[validate_json], help_text=_('Use the JSON syntax.'),
+                               verbose_name=_('context'))
     sort_order = models.PositiveIntegerField(default=0, verbose_name=_('sort order'))
 
     class Meta:
@@ -74,7 +76,7 @@ class Plugget(models.Model):
 
     def __str__(self):
         return "%s | %s" % (self.region, self.title)
-        
+
     def slug(self):
         return slugify("%s_%s" % (self.region, self.title))
 

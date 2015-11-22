@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """This file is part of the django ERP project.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -12,12 +13,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
+from django.contrib.auth import get_user_model
+
 __author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
 __copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
 __version__ = '0.0.1'
-
-
-from django.contrib.auth import get_user_model
 
 
 def get_dashboard_for(username):
@@ -30,7 +30,7 @@ def get_dashboard_for(username):
     except user_model.DoesNotExist:
         raise Region.DoesNotExist
     return Region.objects.get(slug="user_%s_dashboard" % user.pk)
-    
+
 
 def get_user_of(dashboard_slug):
     """Returns the owner of the given bookmarks list.

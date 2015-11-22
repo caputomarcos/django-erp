@@ -52,7 +52,7 @@ class RequireLoginMiddlewareTestCase(TestCase):
         self.assertEqual(response.status_code, 302)
         
         response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)       
+        self.assertEqual(response.status_code, 302)
     
 class LoggedInUserCacheMiddlewareTestCase(TestCase):
     def test_store_request_user(self):

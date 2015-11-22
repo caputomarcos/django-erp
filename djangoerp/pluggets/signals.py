@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """This file is part of the django ERP project.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -12,21 +13,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-__author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
-__copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
-__version__ = '0.0.1'
-
-
 from django.conf import settings
 from django.dispatch import receiver
 from django.utils.translation import ugettext_noop as _
 from django.db.models.signals import post_save, pre_delete
-from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth import get_user_model
 from djangoerp.core.utils.models import get_model
 from djangoerp.core.signals import manage_author_permissions
 
 from .models import *
+
+__author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
+__copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
+__version__ = '0.0.1'
 
 
 class _DashboardRegistry:
@@ -35,19 +34,20 @@ class _DashboardRegistry:
 
     def manage_dashboard(self, cls, default_title):
         """Connects handlers for dashboard management.
-        """        
+        """
+
         @receiver(post_save, sender=cls, dispatch_uid="create_%s_dashboard" % cls)
         def create_dashboard(sender, instance, *args, **kwargs):
             """Creates a new dashboard for the given object.
-            """            
+            """
             from djangoerp.core.cache import LoggedInUserCache
-            
+
             logged_cache = LoggedInUserCache()
             current_user = logged_cache.user
-            
+
             if isinstance(instance, get_user_model()):
                 logged_cache.user = instance
-                
+
             model_ct = ContentType.objects.get_for_model(cls)
             dashboard, is_new = Region.objects.get_or_create(
                 slug="%s_%d_dashboard" % (model_ct.model, instance.pk),
@@ -55,9 +55,9 @@ class _DashboardRegistry:
                 content_type=model_ct,
                 object_id=instance.pk
             )
-            
+
             logged_cache.user = current_user
-            
+
         @receiver(pre_delete, sender=cls, dispatch_uid="delete_%s_dashboard" % cls)
         def delete_dashboard(sender, instance, *args, **kwargs):
             try:
@@ -66,10 +66,12 @@ class _DashboardRegistry:
                 dashboard.delete()
             except Region.DoesNotExist:
                 pass
-            
+
         self._classes[cls] = (create_dashboard, delete_dashboard)
 
+
 _dashboard_registry = _DashboardRegistry()
+
 
 def manage_dashboard(cls, default_title=_("Dashboard")):
     """Connects handlers for dashboard management.
@@ -87,10 +89,10 @@ def manage_dashboard(cls, default_title=_("Dashboard")):
     global _dashboard_registry
     _dashboard_registry.manage_dashboard(cls, default_title)
 
-## CONNECTIONS ##
+
+# CONNECTIONS
 
 manage_author_permissions(Region)
 manage_author_permissions(Plugget)
 
 manage_dashboard(settings.AUTH_USER_MODEL, _('My dashboard'))
-

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """This file is part of the django ERP project.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -12,12 +13,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
+from djangoerp.core.backends import ObjectPermissionBackend
+from djangoerp.core.cache import LoggedInUserCache
+
 __author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
 __copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
 __version__ = '0.0.1'
-
-from djangoerp.core.backends import ObjectPermissionBackend
-from djangoerp.core.cache import LoggedInUserCache
 
 ob = ObjectPermissionBackend()
 logged_cache = LoggedInUserCache()

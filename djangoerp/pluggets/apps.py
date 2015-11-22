@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """This file is part of the django ERP project.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -12,15 +13,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-__author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
-__copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
-__version__ = '0.0.1'
-
-
 from django.apps import AppConfig
 from djangoerp.core.utils.apps import AppConfigMixin
 
 from .loading import registry
+
+__author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
+__copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
+__version__ = '0.0.1'
 
 
 class PluggetsAppConfig(AppConfigMixin, AppConfig):
@@ -36,4 +36,3 @@ class PluggetsAppConfig(AppConfigMixin, AppConfig):
     def ready(self):
         super(PluggetsAppConfig, self).ready()
         self.plugget_registry = registry
-

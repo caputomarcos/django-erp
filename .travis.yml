@@ -14,5 +14,5 @@ install:
 # command to run tests
 script:
   - cp djangoerp/settings/base.py.tmpl djangoerp/settings/base.py
-  - python manage.py test
+  - python manage.py test djangoerp.registration.tests
 

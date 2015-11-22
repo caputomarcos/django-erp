@@ -91,7 +91,9 @@ class RenderMenuTagTestCase(TestCase):
         """        
         output = render_menu({}, "empty-menu")
         
-        self.assertEqual(output.replace('\n', ''), '<ul id="empty-menu-menu" class="menu"></ul>')
+        self.assertEqual(output.replace('\n', ''), '<div    id="empty-menu-menu"    '
+                                                   'class="ui menu"    role="menu">    '
+                                                   '</div>')
         
     def test_render_valid_menu(self):
         """Tests rendering a valid menu.
@@ -316,13 +318,14 @@ class RenderUserBookmarksTagTestCase(TestCase):
         
         self.assertEqual(
             cleaned_output,
-            '<ul id="user_%s_bookmarks-menu" class="menu">'
-            '<li id="l1-link">'
-            '<a title="Link 1" href="/">'
-            'Link 1'
-            '</a>'
-            '</li>'
-            '</ul>' % u1.pk
+            '<div class="menu">'
+            '<div class="header">Bookmarks</div>'
+            '<div class="divider"></div>'
+            '<a class="ui item" title="Bookmark this page" href="/bookmarks/add/">'
+            '<i class="plus icon"></i>Add</a><div class="divider"></div>'
+            '<a class="ui item" title="View all" href="/bookmarks/">'
+            '<i class="list icon"></i>View all</a>'
+            '</div>' % u1.pk
         )
 
 class ScoreLinkTagTestCase(TestCase):

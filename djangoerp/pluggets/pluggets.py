@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+
 """This file is part of the django ERP project.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -16,7 +17,6 @@ __author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
 __copyright__ = 'Copyright (c) 2013-2015, django ERP Team'
 __version__ = '0.0.1'
 
-
 from django.utils.translation import ugettext_noop as _
 from djangoerp.menus.utils import get_bookmarks_for
 from djangoerp.menus.models import Menu
@@ -27,6 +27,7 @@ from .forms import TextPluggetForm
 
 def dummy(context):
     return registry.default_func(context)
+
 
 def menu(context):
     """Menu plugget.
@@ -50,14 +51,16 @@ def menu(context):
         menu = Menu.objects.get(pk=pk)
         context["name"] = menu.slug
     return context
-    
+
+
 def bookmarks_menu(context):
     """Bookmarks plugget.
     
     Shows all your bookmarks.
     """
     if 'user' in context:
-        context['menu_id'] = get_bookmarks_for(context['user'].username).pk  
+        context['menu_id'] = get_bookmarks_for(context['user'].username).pk
     return menu(context)
-        
-registry.register_simple_plugget_source(_("Text plugget"),  _("Simply renders a text paragraph."), form=TextPluggetForm)
+
+
+registry.register_simple_plugget_source(_("Text plugget"), _("Simply renders a text paragraph."), form=TextPluggetForm)

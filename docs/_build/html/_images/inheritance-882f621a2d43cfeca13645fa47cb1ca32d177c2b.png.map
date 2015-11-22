@@ -1,0 +1,4 @@
+<map id="inheritance2c80bc5d6c" name="inheritance2c80bc5d6c">
+<area shape="rect" id="node1" title="Class representing a Django application and its configuration." alt="" coords="39,5,239,29"/>
+<area shape="rect" id="node2" href="#djangoerp.core.apps.CoreAppConfig" title="Configure app dependencies." alt="" coords="321,29,559,53"/>
+</map>

@@ -1,0 +1,1339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>models – core &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../index.html"/>
+        <link rel="up" title="core - tl;dr" href="index.html"/>
+        <link rel="next" title="settings" href="settings.html"/>
+        <link rel="prev" title="managers" href="managers.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Django Erp</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">core -  tl;dr</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apps.html">apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backends.html">backends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cache.html">cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="context_processors.html">context processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorators.html">decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managers.html">managers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href=""><code class="docutils literal"><span class="pre">models</span></code> &#8211; core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html">middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Django Erp</a> &raquo;</li>
+      
+          <li><a href="index.html">core -  tl;dr</a> &raquo;</li>
+      
+    <li><code class="docutils literal"><span class="pre">models</span></code> &#8211; core</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/djangoerp/core/models.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="models-core">
+<h1><code class="xref py py-mod docutils literal"><span class="pre">models</span></code> &#8211; core<a class="headerlink" href="#models-core" title="Link permanente para este título">¶</a></h1>
+<p class="graphviz">
+<img src="../../_images/inheritance-3492e2da377333ff1fb9198b28b197a66cb984dc.png" alt="Inheritance diagram of djangoerp.core.models" usemap="#inheritancea1556208d1" class="inheritance"/>
+<map id="inheritancea1556208d1" name="inheritancea1556208d1">
+<area shape="rect" id="node9" href="#djangoerp.core.models.User" title="A custom User model with timezone and language support." alt="" coords="570,27,745,50"/>
+<area shape="rect" id="node3" title="Groups are a generic way of categorizing users to apply permissions, or" alt="" coords="268,94,475,117"/>
+<area shape="rect" id="node4" title="The permissions system provides a way to assign permissions to specific" alt="" coords="254,139,488,161"/>
+<area shape="rect" id="node5" title="A mixin class that adds the fields and methods necessary to support" alt="" coords="237,50,506,72"/>
+<area shape="rect" id="node7" href="#djangoerp.core.models.ObjectPermission" title="A generic object/row&#45;level permission." alt="" coords="248,184,495,206"/>
+<area shape="rect" id="node6" href="#djangoerp.core.models.Group" title="A proxy for Group model which customize its string representation." alt="" coords="566,94,750,117"/>
+<area shape="rect" id="node8" href="#djangoerp.core.models.Permission" title="A proxy for Permission model which uses a custom manager." alt="" coords="552,139,763,161"/>
+</map>
+</p>
+<span class="target" id="module-djangoerp.core.models"></span><dl class="class">
+<dt id="djangoerp.core.models.Group">
+<em class="property">class </em><code class="descclassname">djangoerp.core.models.</code><code class="descname">Group</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#Group"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.Group" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.Group</span></code></p>
+<p>A proxy for Group model which customize its string representation.</p>
+<dl class="exception">
+<dt id="djangoerp.core.models.Group.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#djangoerp.core.models.Group.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.DoesNotExist</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.Group.DoesNotExist.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.Group.DoesNotExist.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.models.Group.DoesNotExist.silent_variable_failure" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="djangoerp.core.models.Group.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Group.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#djangoerp.core.models.Group.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.MultipleObjectsReturned</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.Group.MultipleObjectsReturned.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.Group.MultipleObjectsReturned.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.check">
+<code class="descclassname">Group.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.clean">
+<code class="descclassname">Group.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.clean_fields">
+<code class="descclassname">Group.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.clean_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.date_error_message">
+<code class="descclassname">Group.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.date_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.delete">
+<code class="descclassname">Group.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.delete" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.from_db">
+<code class="descclassname">Group.</code><code class="descname">from_db</code><span class="sig-paren">(</span><em>db</em>, <em>field_names</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.full_clean">
+<code class="descclassname">Group.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.full_clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.get_deferred_fields">
+<code class="descclassname">Group.</code><code class="descname">get_deferred_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.get_deferred_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a set containing names of deferred fields for this instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.natural_key">
+<code class="descclassname">Group.</code><code class="descname">natural_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/models.html#Group.natural_key"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.Group.natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.objectpermissions">
+<code class="descclassname">Group.</code><code class="descname">objectpermissions</code><a class="headerlink" href="#djangoerp.core.models.Group.objectpermissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.objects">
+<code class="descclassname">Group.</code><code class="descname">objects</code><em class="property"> = &lt;django.contrib.auth.models.GroupManager object&gt;</em><a class="headerlink" href="#djangoerp.core.models.Group.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.permissions">
+<code class="descclassname">Group.</code><code class="descname">permissions</code><a class="headerlink" href="#djangoerp.core.models.Group.permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.pk">
+<code class="descclassname">Group.</code><code class="descname">pk</code><a class="headerlink" href="#djangoerp.core.models.Group.pk" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.prepare_database_save">
+<code class="descclassname">Group.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.prepare_database_save" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.refresh_from_db">
+<code class="descclassname">Group.</code><code class="descname">refresh_from_db</code><span class="sig-paren">(</span><em>using=None</em>, <em>fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.refresh_from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reloads field values from the database.</p>
+<p>By default, the reloading happens from the database this instance was
+loaded from, or by the read router if this instance wasn&#8217;t loaded from
+any database. The using parameter will override the default.</p>
+<p>Fields can be used to specify which fields to reload. The fields
+should be an iterable of field attnames. If fields is None, then
+all non-deferred fields are reloaded.</p>
+<p>When accessing deferred fields of an instance, the deferred loading
+of the field will call this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.save">
+<code class="descclassname">Group.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.save" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.save_base">
+<code class="descclassname">Group.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.save_base" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.serializable_value">
+<code class="descclassname">Group.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.serializable_value" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.unique_error_message">
+<code class="descclassname">Group.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.unique_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Group.user_set">
+<code class="descclassname">Group.</code><code class="descname">user_set</code><a class="headerlink" href="#djangoerp.core.models.Group.user_set" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Group.validate_unique">
+<code class="descclassname">Group.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Group.validate_unique" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.models.ObjectPermission">
+<em class="property">class </em><code class="descclassname">djangoerp.core.models.</code><code class="descname">ObjectPermission</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#ObjectPermission"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.ObjectPermission" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>A generic object/row-level permission.</p>
+<dl class="exception">
+<dt id="djangoerp.core.models.ObjectPermission.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.DoesNotExist.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.DoesNotExist.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.DoesNotExist.silent_variable_failure" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="djangoerp.core.models.ObjectPermission.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">ObjectPermission.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.MultipleObjectsReturned.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.MultipleObjectsReturned.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.check">
+<code class="descclassname">ObjectPermission.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.clean">
+<code class="descclassname">ObjectPermission.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.clean_fields">
+<code class="descclassname">ObjectPermission.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.clean_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.date_error_message">
+<code class="descclassname">ObjectPermission.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.date_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.delete">
+<code class="descclassname">ObjectPermission.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.delete" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.from_db">
+<code class="descclassname">ObjectPermission.</code><code class="descname">from_db</code><span class="sig-paren">(</span><em>db</em>, <em>field_names</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.full_clean">
+<code class="descclassname">ObjectPermission.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.full_clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.get_deferred_fields">
+<code class="descclassname">ObjectPermission.</code><code class="descname">get_deferred_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.get_deferred_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a set containing names of deferred fields for this instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.groups">
+<code class="descclassname">ObjectPermission.</code><code class="descname">groups</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.groups" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.objects">
+<code class="descclassname">ObjectPermission.</code><code class="descname">objects</code><em class="property"> = &lt;djangoerp.core.managers.ObjectPermissionManager object&gt;</em><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.perm">
+<code class="descclassname">ObjectPermission.</code><code class="descname">perm</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.perm" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.pk">
+<code class="descclassname">ObjectPermission.</code><code class="descname">pk</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.pk" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.prepare_database_save">
+<code class="descclassname">ObjectPermission.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.prepare_database_save" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.refresh_from_db">
+<code class="descclassname">ObjectPermission.</code><code class="descname">refresh_from_db</code><span class="sig-paren">(</span><em>using=None</em>, <em>fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.refresh_from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reloads field values from the database.</p>
+<p>By default, the reloading happens from the database this instance was
+loaded from, or by the read router if this instance wasn&#8217;t loaded from
+any database. The using parameter will override the default.</p>
+<p>Fields can be used to specify which fields to reload. The fields
+should be an iterable of field attnames. If fields is None, then
+all non-deferred fields are reloaded.</p>
+<p>When accessing deferred fields of an instance, the deferred loading
+of the field will call this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.save">
+<code class="descclassname">ObjectPermission.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.save" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.save_base">
+<code class="descclassname">ObjectPermission.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.save_base" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.serializable_value">
+<code class="descclassname">ObjectPermission.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.serializable_value" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.uid">
+<code class="descclassname">ObjectPermission.</code><code class="descname">uid</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.uid" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.unique_error_message">
+<code class="descclassname">ObjectPermission.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.unique_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.ObjectPermission.users">
+<code class="descclassname">ObjectPermission.</code><code class="descname">users</code><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.users" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.ObjectPermission.validate_unique">
+<code class="descclassname">ObjectPermission.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.ObjectPermission.validate_unique" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.models.Permission">
+<em class="property">class </em><code class="descclassname">djangoerp.core.models.</code><code class="descname">Permission</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#Permission"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.Permission" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.Permission</span></code></p>
+<p>A proxy for Permission model which uses a custom manager.</p>
+<dl class="exception">
+<dt id="djangoerp.core.models.Permission.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#djangoerp.core.models.Permission.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.DoesNotExist</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.Permission.DoesNotExist.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.Permission.DoesNotExist.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.models.Permission.DoesNotExist.silent_variable_failure" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="djangoerp.core.models.Permission.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">Permission.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#djangoerp.core.models.Permission.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.MultipleObjectsReturned</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.Permission.MultipleObjectsReturned.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.Permission.MultipleObjectsReturned.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.check">
+<code class="descclassname">Permission.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.clean">
+<code class="descclassname">Permission.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.clean_fields">
+<code class="descclassname">Permission.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.clean_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.content_type">
+<code class="descclassname">Permission.</code><code class="descname">content_type</code><a class="headerlink" href="#djangoerp.core.models.Permission.content_type" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.date_error_message">
+<code class="descclassname">Permission.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.date_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.delete">
+<code class="descclassname">Permission.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.delete" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.from_db">
+<code class="descclassname">Permission.</code><code class="descname">from_db</code><span class="sig-paren">(</span><em>db</em>, <em>field_names</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.full_clean">
+<code class="descclassname">Permission.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.full_clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.get_deferred_fields">
+<code class="descclassname">Permission.</code><code class="descname">get_deferred_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.get_deferred_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a set containing names of deferred fields for this instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.group_set">
+<code class="descclassname">Permission.</code><code class="descname">group_set</code><a class="headerlink" href="#djangoerp.core.models.Permission.group_set" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.natural_key">
+<code class="descclassname">Permission.</code><code class="descname">natural_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/models.html#Permission.natural_key"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.Permission.natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.objectpermission_set">
+<code class="descclassname">Permission.</code><code class="descname">objectpermission_set</code><a class="headerlink" href="#djangoerp.core.models.Permission.objectpermission_set" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.objects">
+<code class="descclassname">Permission.</code><code class="descname">objects</code><em class="property"> = &lt;djangoerp.core.managers.PermissionManager object&gt;</em><a class="headerlink" href="#djangoerp.core.models.Permission.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.pk">
+<code class="descclassname">Permission.</code><code class="descname">pk</code><a class="headerlink" href="#djangoerp.core.models.Permission.pk" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.prepare_database_save">
+<code class="descclassname">Permission.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.prepare_database_save" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.refresh_from_db">
+<code class="descclassname">Permission.</code><code class="descname">refresh_from_db</code><span class="sig-paren">(</span><em>using=None</em>, <em>fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.refresh_from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reloads field values from the database.</p>
+<p>By default, the reloading happens from the database this instance was
+loaded from, or by the read router if this instance wasn&#8217;t loaded from
+any database. The using parameter will override the default.</p>
+<p>Fields can be used to specify which fields to reload. The fields
+should be an iterable of field attnames. If fields is None, then
+all non-deferred fields are reloaded.</p>
+<p>When accessing deferred fields of an instance, the deferred loading
+of the field will call this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.save">
+<code class="descclassname">Permission.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.save" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.save_base">
+<code class="descclassname">Permission.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.save_base" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.serializable_value">
+<code class="descclassname">Permission.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.serializable_value" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.uid">
+<code class="descclassname">Permission.</code><code class="descname">uid</code><a class="headerlink" href="#djangoerp.core.models.Permission.uid" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.unique_error_message">
+<code class="descclassname">Permission.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.unique_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.Permission.user_set">
+<code class="descclassname">Permission.</code><code class="descname">user_set</code><a class="headerlink" href="#djangoerp.core.models.Permission.user_set" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.Permission.validate_unique">
+<code class="descclassname">Permission.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.Permission.validate_unique" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.models.User">
+<em class="property">class </em><code class="descclassname">djangoerp.core.models.</code><code class="descname">User</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#User"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.User" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.AbstractBaseUser</span></code>, <code class="xref py py-class docutils literal"><span class="pre">django.contrib.auth.models.PermissionsMixin</span></code></p>
+<p>A custom User model with timezone and language support.</p>
+<dl class="exception">
+<dt id="djangoerp.core.models.User.DoesNotExist">
+<em class="property">exception </em><code class="descname">DoesNotExist</code><a class="headerlink" href="#djangoerp.core.models.User.DoesNotExist" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.DoesNotExist.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.User.DoesNotExist.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.DoesNotExist.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.User.DoesNotExist.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.DoesNotExist.silent_variable_failure">
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.models.User.DoesNotExist.silent_variable_failure" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.models.User.Meta">
+<em class="property">class </em><code class="descclassname">User.</code><code class="descname">Meta</code><a class="reference internal" href="../../_modules/django/contrib/auth/models.html#User.Meta"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.User.Meta" title="Link permanente para esta definição">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="djangoerp.core.models.User.Meta.abstract">
+<code class="descname">abstract</code><em class="property"> = False</em><a class="headerlink" href="#djangoerp.core.models.User.Meta.abstract" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="djangoerp.core.models.User.MultipleObjectsReturned">
+<em class="property">exception </em><code class="descclassname">User.</code><code class="descname">MultipleObjectsReturned</code><a class="headerlink" href="#djangoerp.core.models.User.MultipleObjectsReturned" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.MultipleObjectsReturned.args">
+<code class="descname">args</code><a class="headerlink" href="#djangoerp.core.models.User.MultipleObjectsReturned.args" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.MultipleObjectsReturned.message">
+<code class="descname">message</code><a class="headerlink" href="#djangoerp.core.models.User.MultipleObjectsReturned.message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.REQUIRED_FIELDS">
+<code class="descclassname">User.</code><code class="descname">REQUIRED_FIELDS</code><em class="property"> = [u'email']</em><a class="headerlink" href="#djangoerp.core.models.User.REQUIRED_FIELDS" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.USERNAME_FIELD">
+<code class="descclassname">User.</code><code class="descname">USERNAME_FIELD</code><em class="property"> = u'username'</em><a class="headerlink" href="#djangoerp.core.models.User.USERNAME_FIELD" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.check">
+<code class="descclassname">User.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.check_password">
+<code class="descclassname">User.</code><code class="descname">check_password</code><span class="sig-paren">(</span><em>raw_password</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.check_password" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a boolean of whether the raw_password was correct. Handles
+hashing formats behind the scenes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.clean">
+<code class="descclassname">User.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.clean_fields">
+<code class="descclassname">User.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.clean_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.date_error_message">
+<code class="descclassname">User.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.date_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.delete">
+<code class="descclassname">User.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.delete" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.email_user">
+<code class="descclassname">User.</code><code class="descname">email_user</code><span class="sig-paren">(</span><em>subject</em>, <em>message</em>, <em>from_email=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#User.email_user"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.User.email_user" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.from_db">
+<code class="descclassname">User.</code><code class="descname">from_db</code><span class="sig-paren">(</span><em>db</em>, <em>field_names</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.full_clean">
+<code class="descclassname">User.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.full_clean" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_absolute_url">
+<code class="descclassname">User.</code><code class="descname">get_absolute_url</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#User.get_absolute_url"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.User.get_absolute_url" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_all_permissions">
+<code class="descclassname">User.</code><code class="descname">get_all_permissions</code><span class="sig-paren">(</span><em>obj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_all_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_deferred_fields">
+<code class="descclassname">User.</code><code class="descname">get_deferred_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_deferred_fields" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a set containing names of deferred fields for this instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_full_name">
+<code class="descclassname">User.</code><code class="descname">get_full_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#User.get_full_name"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.User.get_full_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_group_permissions">
+<code class="descclassname">User.</code><code class="descname">get_group_permissions</code><span class="sig-paren">(</span><em>obj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_group_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of permission strings that this user has through their
+groups. This method queries all available auth backends. If an object
+is passed in, only permissions matching this object are returned.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_language_display">
+<code class="descclassname">User.</code><code class="descname">get_language_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_language_display" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_next_by_date_joined">
+<code class="descclassname">User.</code><code class="descname">get_next_by_date_joined</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_next_by_date_joined" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_previous_by_date_joined">
+<code class="descclassname">User.</code><code class="descname">get_previous_by_date_joined</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_previous_by_date_joined" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_session_auth_hash">
+<code class="descclassname">User.</code><code class="descname">get_session_auth_hash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_session_auth_hash" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns an HMAC of the password field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_short_name">
+<code class="descclassname">User.</code><code class="descname">get_short_name</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#User.get_short_name"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.User.get_short_name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_timezone_display">
+<code class="descclassname">User.</code><code class="descname">get_timezone_display</code><span class="sig-paren">(</span><em>*moreargs</em>, <em>**morekwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_timezone_display" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.get_username">
+<code class="descclassname">User.</code><code class="descname">get_username</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.get_username" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return the identifying username for this User</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.groups">
+<code class="descclassname">User.</code><code class="descname">groups</code><a class="headerlink" href="#djangoerp.core.models.User.groups" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.has_module_perms">
+<code class="descclassname">User.</code><code class="descname">has_module_perms</code><span class="sig-paren">(</span><em>app_label</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.has_module_perms" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns True if the user has any permissions in the given app label.
+Uses pretty much the same logic as has_perm, above.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.has_perm">
+<code class="descclassname">User.</code><code class="descname">has_perm</code><span class="sig-paren">(</span><em>perm</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.has_perm" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns True if the user has the specified permission. This method
+queries all available auth backends, but returns immediately if any
+backend returns True. Thus, a user who has permission from a single
+auth backend is assumed to have permission in general. If an object is
+provided, permissions for this specific object are checked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.has_perms">
+<code class="descclassname">User.</code><code class="descname">has_perms</code><span class="sig-paren">(</span><em>perm_list</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.has_perms" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns True if the user has each of the specified permissions. If
+object is passed, it checks if the user has all required perms for this
+object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.has_usable_password">
+<code class="descclassname">User.</code><code class="descname">has_usable_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.has_usable_password" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.is_active">
+<code class="descclassname">User.</code><code class="descname">is_active</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.models.User.is_active" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.is_anonymous">
+<code class="descclassname">User.</code><code class="descname">is_anonymous</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.is_anonymous" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Always returns False. This is a way of comparing User objects to
+anonymous users.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.is_authenticated">
+<code class="descclassname">User.</code><code class="descname">is_authenticated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.is_authenticated" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Always return True. This is a way to tell if the user has been
+authenticated in templates.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.natural_key">
+<code class="descclassname">User.</code><code class="descname">natural_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.objectpermissions">
+<code class="descclassname">User.</code><code class="descname">objectpermissions</code><a class="headerlink" href="#djangoerp.core.models.User.objectpermissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.objects">
+<code class="descclassname">User.</code><code class="descname">objects</code><em class="property"> = &lt;djangoerp.core.managers.UserManager object&gt;</em><a class="headerlink" href="#djangoerp.core.models.User.objects" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.pk">
+<code class="descclassname">User.</code><code class="descname">pk</code><a class="headerlink" href="#djangoerp.core.models.User.pk" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.prepare_database_save">
+<code class="descclassname">User.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.prepare_database_save" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.refresh_from_db">
+<code class="descclassname">User.</code><code class="descname">refresh_from_db</code><span class="sig-paren">(</span><em>using=None</em>, <em>fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.refresh_from_db" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reloads field values from the database.</p>
+<p>By default, the reloading happens from the database this instance was
+loaded from, or by the read router if this instance wasn&#8217;t loaded from
+any database. The using parameter will override the default.</p>
+<p>Fields can be used to specify which fields to reload. The fields
+should be an iterable of field attnames. If fields is None, then
+all non-deferred fields are reloaded.</p>
+<p>When accessing deferred fields of an instance, the deferred loading
+of the field will call this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.save">
+<code class="descclassname">User.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.save" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.save_base">
+<code class="descclassname">User.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.save_base" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.serializable_value">
+<code class="descclassname">User.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.serializable_value" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.set_password">
+<code class="descclassname">User.</code><code class="descname">set_password</code><span class="sig-paren">(</span><em>raw_password</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.set_password" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.set_unusable_password">
+<code class="descclassname">User.</code><code class="descname">set_unusable_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.set_unusable_password" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.unique_error_message">
+<code class="descclassname">User.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.unique_error_message" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.models.User.user_permissions">
+<code class="descclassname">User.</code><code class="descname">user_permissions</code><a class="headerlink" href="#djangoerp.core.models.User.user_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.models.User.validate_unique">
+<code class="descclassname">User.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.models.User.validate_unique" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="djangoerp.core.models.validate_json">
+<code class="descclassname">djangoerp.core.models.</code><code class="descname">validate_json</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#validate_json"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.models.validate_json" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Validates a JSON snippet.</p>
+</dd></dl>
+
+<dl class="class">
+<dt>
+<em class="property">class </em><code class="descclassname">djangoerp.core.models.</code><code class="descname">ObjectPermission</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/models.html#ObjectPermission"><span class="viewcode-link">[código fonte]</span></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>A generic object/row-level permission.</p>
+<dl class="exception">
+<dt>
+<em class="property">exception </em><code class="descname">DoesNotExist</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+<dl class="attribute">
+<dt>
+<code class="descname">args</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">message</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">silent_variable_failure</code><em class="property"> = True</em></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt>
+<em class="property">exception </em><code class="descclassname">ObjectPermission.</code><code class="descname">MultipleObjectsReturned</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+<dl class="attribute">
+<dt>
+<code class="descname">args</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">message</code></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Hook for doing any extra model-wide validation after clean() has been
+called on every field by self.clean_fields. Any ValidationError raised
+by this method will not be associated with a particular field; it will
+have a special-case association with the field defined by NON_FIELD_ERRORS.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">clean_fields</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Cleans all fields and raises a ValidationError containing a dict
+of all validation errors if any occur.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">date_error_message</code><span class="sig-paren">(</span><em>lookup_type</em>, <em>field_name</em>, <em>unique_for</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>using=None</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">from_db</code><span class="sig-paren">(</span><em>db</em>, <em>field_names</em>, <em>values</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">full_clean</code><span class="sig-paren">(</span><em>exclude=None</em>, <em>validate_unique=True</em><span class="sig-paren">)</span></dt>
+<dd><p>Calls clean_fields, clean, and validate_unique, on the model,
+and raises a <code class="docutils literal"><span class="pre">ValidationError</span></code> for any errors that occurred.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">get_deferred_fields</code><span class="sig-paren">(</span><span class="sig-paren">)</span></dt>
+<dd><p>Returns a set containing names of deferred fields for this instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">groups</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">objects</code><em class="property"> = &lt;djangoerp.core.managers.ObjectPermissionManager object&gt;</em></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">perm</code></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">pk</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">prepare_database_save</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">refresh_from_db</code><span class="sig-paren">(</span><em>using=None</em>, <em>fields=None</em>, <em>**kwargs</em><span class="sig-paren">)</span></dt>
+<dd><p>Reloads field values from the database.</p>
+<p>By default, the reloading happens from the database this instance was
+loaded from, or by the read router if this instance wasn&#8217;t loaded from
+any database. The using parameter will override the default.</p>
+<p>Fields can be used to specify which fields to reload. The fields
+should be an iterable of field attnames. If fields is None, then
+all non-deferred fields are reloaded.</p>
+<p>When accessing deferred fields of an instance, the deferred loading
+of the field will call this method.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">save</code><span class="sig-paren">(</span><em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Saves the current instance. Override this in a subclass if you want to
+control the saving process.</p>
+<p>The &#8216;force_insert&#8217; and &#8216;force_update&#8217; parameters can be used to insist
+that the &#8220;save&#8221; must be an SQL insert or update (or equivalent for
+non-SQL backends), respectively. Normally, they should not be set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">save_base</code><span class="sig-paren">(</span><em>raw=False</em>, <em>force_insert=False</em>, <em>force_update=False</em>, <em>using=None</em>, <em>update_fields=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Handles the parts of saving which should be done only once per save,
+yet need to be done in raw saves, too. This includes some sanity
+checks and signal sending.</p>
+<p>The &#8216;raw&#8217; argument is telling save_base not to save any parent
+models and not to do any changes to the values before save. This
+is used by fixture loading.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">serializable_value</code><span class="sig-paren">(</span><em>field_name</em><span class="sig-paren">)</span></dt>
+<dd><p>Returns the value of the field name for this instance. If the field is
+a foreign key, returns the id value, instead of the object. If there&#8217;s
+no Field object with this name on the model, the model attribute&#8217;s
+value is returned directly.</p>
+<p>Used to serialize a field&#8217;s value (in the serializer, or form output,
+for example). Normally, you would just access the attribute directly
+and not use this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">uid</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">unique_error_message</code><span class="sig-paren">(</span><em>model_class</em>, <em>unique_check</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">users</code></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descclassname">ObjectPermission.</code><code class="descname">validate_unique</code><span class="sig-paren">(</span><em>exclude=None</em><span class="sig-paren">)</span></dt>
+<dd><p>Checks unique constraints on the model and raises <code class="docutils literal"><span class="pre">ValidationError</span></code>
+if any failed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="settings.html" class="btn btn-neutral float-right" title="settings" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="managers.html" class="btn btn-neutral" title="managers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

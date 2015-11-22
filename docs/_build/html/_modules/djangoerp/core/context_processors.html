@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>djangoerp.core.context_processors &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../../index.html"/>
+        <link rel="up" title="Código do módulo" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../djangoerp/index.html">Django Erp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../djangoerp/index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Código do módulo</a> &raquo;</li>
+      
+    <li>djangoerp.core.context_processors</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fonte de djangoerp.core.context_processors</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="sd">&quot;&quot;&quot;This file is part of the django ERP project.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="sd">THE SOFTWARE.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Emanuele Bertoldi &lt;emanuele.bertoldi@gmail.com&gt;&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (c) 2013-2015, django ERP Team&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s">&#39;0.0.1&#39;</span>
+
+
+<span class="kn">from</span> <span class="nn">django.utils.functional</span> <span class="kn">import</span> <span class="n">lazy</span>
+<span class="kn">from</span> <span class="nn">djangoerp</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_version</span><span class="p">,</span>
+    <span class="n">get_copyright</span>
+<span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<span class="c"># ObjPermWrapper and ObjPermLookupDict proxy the permissions system into objects</span>
+<span class="c"># the template system could understand.</span>
+
+<div class="viewcode-block" id="ObjPermLookupDict"><a class="viewcode-back" href="../../../djangoerp/core/context_processors.html#djangoerp.core.context_processors.ObjPermLookupDict">[documentos]</a><span class="k">class</span> <span class="nc">ObjPermLookupDict</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">module_name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">user</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">module_name</span> <span class="o">=</span> <span class="n">module_name</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">repr</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">uid</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ObjectPermission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">perm__content_type__app_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">uid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">uid</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">objectpermissions</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">perm__content_type__app_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">uid</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;.&#39;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">3</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">perm_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="n">perms</span> <span class="o">=</span> <span class="n">Permission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">content_type__app_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">,</span> <span class="n">codename</span><span class="o">=</span><span class="n">perm_name</span><span class="p">)</span>
+            <span class="k">return</span> <span class="p">[</span><span class="n">obj</span><span class="o">.</span><span class="n">pk</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perms</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">content_type</span><span class="o">.</span><span class="n">model_class</span><span class="p">()</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">p</span><span class="o">.</span><span class="n">object_id</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">objectpermissions</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">perm__content_type__app_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">,</span> <span class="n">perm__codename</span><span class="o">=</span><span class="n">perm_name</span><span class="p">)]</span>
+
+    <span class="k">def</span> <span class="nf">__bool__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">objectpermissions</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">perm__content_type__app_label</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">module_name</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+
+</div>
+<div class="viewcode-block" id="ObjPermWrapper"><a class="viewcode-back" href="../../../djangoerp/core/context_processors.html#djangoerp.core.context_processors.ObjPermWrapper">[documentos]</a><span class="k">class</span> <span class="nc">ObjPermWrapper</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">user</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module_name</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_anonymous</span><span class="p">():</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="n">ObjPermLookupDict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">module_name</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c"># I am large, I contain multitudes.</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&quot;ObjPermWrapper is not iterable.&quot;</span><span class="p">)</span>
+
+</div>
+<div class="viewcode-block" id="auth"><a class="viewcode-back" href="../../../djangoerp/core/context_processors.html#djangoerp.core.context_processors.auth">[documentos]</a><span class="k">def</span> <span class="nf">auth</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adds a new &#39;obj_perms&#39; context variable.</span>
+
+<span class="sd">    If there is no &#39;user&#39; attribute in the request, uses AnonymousUser (from</span>
+<span class="sd">    django.contrib.auth).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c"># If we access request.user, request.session is accessed, which results in</span>
+    <span class="c"># &#39;Vary: Cookie&#39; being sent in every request that uses this context</span>
+    <span class="c"># processor, which can easily be every request on a site if</span>
+    <span class="c"># TEMPLATE_CONTEXT_PROCESSORS has this context processor added.  This kills</span>
+    <span class="c"># the ability to cache.  So, we carefully ensure these attributes are lazy.</span>
+    <span class="c"># We don&#39;t use django.utils.functional.lazy() for User, because that</span>
+    <span class="c"># requires knowing the class of the object we want to proxy, which could</span>
+    <span class="c"># break with custom auth backends.  LazyObject is a less complete but more</span>
+    <span class="c"># flexible solution that is a good enough wrapper for &#39;User&#39;.</span>
+    <span class="k">def</span> <span class="nf">_get_user</span><span class="p">():</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">&#39;user&#39;</span><span class="p">):</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">AnonymousUser</span>
+            <span class="n">user</span> <span class="o">=</span> <span class="n">AnonymousUser</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">user</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s">&#39;obj_perms&#39;</span><span class="p">:</span> <span class="n">lazy</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">ObjPermWrapper</span><span class="p">(</span><span class="n">_get_user</span><span class="p">()),</span> <span class="n">ObjPermWrapper</span><span class="p">)(),</span>
+    <span class="p">}</span>
+
+</div>
+<div class="viewcode-block" id="system_info"><a class="viewcode-back" href="../../../djangoerp/core/context_processors.html#djangoerp.core.context_processors.system_info">[documentos]</a><span class="k">def</span> <span class="nf">system_info</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Adds some context variables to print useful system information.</span>
+
+<span class="sd">    The added context variables are:</span>
+
+<span class="sd">    * VERSION (django ERP version string)</span>
+<span class="sd">    * COPYRIGHT (django ERP copyright notice)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s">&#39;VERSION&#39;</span><span class="p">:</span> <span class="n">get_version</span><span class="p">(),</span>
+        <span class="s">&#39;COPYRIGHT&#39;</span><span class="p">:</span> <span class="n">get_copyright</span><span class="p">()</span>
+    <span class="p">}</span></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

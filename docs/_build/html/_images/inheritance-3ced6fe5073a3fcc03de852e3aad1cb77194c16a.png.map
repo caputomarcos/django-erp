@@ -1,0 +1,5 @@
+<map id="inheritancea8cf0384dd" name="inheritancea8cf0384dd">
+<area shape="rect" id="node8" href="#djangoerp.core.managers.UserManager" title="Manager for custom User model." alt="" coords="640,2,757,13"/>
+<area shape="rect" id="node6" href="#djangoerp.core.managers.ObjectPermissionManager" title="Custom manager for ObjectPermission model." alt="" coords="459,46,610,57"/>
+<area shape="rect" id="node7" href="#djangoerp.core.managers.PermissionManager" title="Custom manager for Permission model." alt="" coords="632,24,766,35"/>
+</map>

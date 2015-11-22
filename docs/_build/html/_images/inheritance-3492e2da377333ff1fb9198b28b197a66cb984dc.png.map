@@ -1,0 +1,9 @@
+<map id="inheritancea1556208d1" name="inheritancea1556208d1">
+<area shape="rect" id="node9" href="#djangoerp.core.models.User" title="A custom User model with timezone and language support." alt="" coords="570,27,745,50"/>
+<area shape="rect" id="node3" title="Groups are a generic way of categorizing users to apply permissions, or" alt="" coords="268,94,475,117"/>
+<area shape="rect" id="node4" title="The permissions system provides a way to assign permissions to specific" alt="" coords="254,139,488,161"/>
+<area shape="rect" id="node5" title="A mixin class that adds the fields and methods necessary to support" alt="" coords="237,50,506,72"/>
+<area shape="rect" id="node7" href="#djangoerp.core.models.ObjectPermission" title="A generic object/row&#45;level permission." alt="" coords="248,184,495,206"/>
+<area shape="rect" id="node6" href="#djangoerp.core.models.Group" title="A proxy for Group model which customize its string representation." alt="" coords="566,94,750,117"/>
+<area shape="rect" id="node8" href="#djangoerp.core.models.Permission" title="A proxy for Permission model which uses a custom manager." alt="" coords="552,139,763,161"/>
+</map>

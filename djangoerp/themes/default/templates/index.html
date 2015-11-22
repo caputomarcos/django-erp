@@ -1,16 +1,27 @@
+{% extends "page.html" %}
+
 {% load i18n %}
+{% load perms %}
+{% load regions %}
 
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
+{% block meta-title %}
+    {% first_region_for user as user_dashboard %}
+    {{ user_dashboard.title }} | 
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>{% block meta_title %}{% trans "django ERP" %}{% endblock %}</title>
-</head>
+{% block page-title %}
+    {% first_region_for user as user_dashboard %}
+    <h1>{{ user_dashboard.title }}</h1>
+{% endblock %}
 
-<body>
-    <h1>{% trans 'Welcome to django ERP!' %}</h1>
-</body>
+{% block page-actions %}
+    {% first_region_for user as user_dashboard %}
+    <a class="ui add icon button" href="{% url 'plugget_add' user_dashboard.slug %}">
+        <i class="plus icon"></i>
+    </a>
+{% endblock %}
 
-</html>
-
+{% block main %}
+    {% first_region_for user as user_dashboard %}
+    {% render_region user_dashboard.slug "pluggets/partials/dashboard.html" %}
+{% endblock %}

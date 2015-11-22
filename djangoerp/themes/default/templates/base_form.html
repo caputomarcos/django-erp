@@ -1,0 +1,44 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+{% load introspection %}
+{% load menus %}
+
+{% block meta-title %}
+    {% if object and object.pk %}
+    {% with model=object|model_name %}
+    {% blocktrans %}Edit {{ model }}{% endblocktrans %}
+    {% endwith %}
+    {% else %}
+    {% with model=view.model|model_name %}
+    {% blocktrans %}Add {{ model }}{% endblocktrans %}
+    {% endwith %}
+    {% endif %} | 
+{% endblock %}
+
+{% block page-title %}
+    <h1 class="ui header">
+        {% block page-main-title %}
+            {% if object and object.pk %}
+            {{ object|striptags|capfirst }}
+            {% else %}
+            {% with model=view.model|model_name %}
+            {% blocktrans %}Add {{ model }}{% endblocktrans %}
+            {% endwith %}
+            {% endif %}
+        {% endblock %}
+        <div class="sub header">
+        {% block page-sub-title %}
+            {% include "partials/status_label.html" with colour="yellow" label="Not Saved" %}
+        {% endblock %}
+        </div>
+    </h1>
+{% endblock %}
+
+{% block page-actions %}
+    {% with action_menu_slug=object|raw_model_name|add:"_detail_actions" %}{% render_menu action_menu_slug "menus/partials/menu_actions.html" %}{% endwith %}
+{% endblock %}
+
+{% block main %}
+    {% include form.template_name|default:"partials/form.html" with form=form %}
+{% endblock %}

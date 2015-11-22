@@ -1,0 +1,62 @@
+{% extends "base_detail.html" %}
+
+{% load i18n %}
+{% load markup %}
+{% load introspection %}
+{% load breadcrumbs %}
+{% load avatar %}
+
+{% block meta-title %}
+    {% if object.pk == user.pk %}
+    {% trans "My profile" %} | 
+    {% else %}
+    {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block breadcrumbs %}
+    {% if object == request.user %}
+    {% add_crumb "My profile" %}
+    {% else %}
+    {% add_crumb object %}
+    {% endif %}
+{% endblock %}
+
+{% block page-main-title %}
+    {% if object.pk == request.user.pk %}
+    {% trans "My profile" %}
+    {% else %}
+    {{ block.super }}
+    {% endif %}
+{% endblock %}
+
+{% block page-sub-title %}
+    {% if object.is_active %}
+        {% trans "Active" as label %}
+        {% include "partials/status_label.html" with colour="green" label=label %}
+    {% else %}
+        {% trans "Not Active" as label %}
+        {% include "partials/status_label.html" with colour="red" label=label %}
+    {% endif %}
+{% endblock %}
+
+{% block main-details %}
+    {% with object|get_fields as object_fields %}
+    <div class="ui grid">
+        <div class="sixteen wide mobile six wide tablet four wide computer column">
+            <div class="ui centered limited fluid rounded image">
+                {% avatar object.email size="200" css_class="" %}
+            </div>
+        </div>
+        <div class="sixteen wide mobile ten wide tablet twelve wide computer column">
+            <div class="ui stackable grid">
+                {% for fieldname in "username,email,is_superuser,is_staff,language,timezone,date_joined,last_login"|split:"," %}
+                <div class="eight wide column">
+                    {% include "partials/field_details.html" with field=object_fields|get:fieldname %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endwith %}
+{% endblock %}

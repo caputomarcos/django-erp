@@ -1,0 +1,5 @@
+<map id="inheritance5a61c31054" name="inheritance5a61c31054">
+<area shape="rect" id="node1" title="Authenticates against settings.AUTH_USER_MODEL." alt="" coords="27,53,315,77"/>
+<area shape="rect" id="node2" href="#djangoerp.core.backends.ModelBackend" title="A proxy model&#45;level backend." alt="" coords="384,53,647,77"/>
+<area shape="rect" id="node3" href="#djangoerp.core.backends.ObjectPermissionBackend" title="Backend which enables support for row/object&#45;level permissions." alt="" coords="5,5,336,29"/>
+</map>

@@ -1,0 +1,36 @@
+{% extends "splash.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block meta-title %}{% trans 'Login' %} | {% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
+{% endblock %}
+
+{% block bodyclass %}login{% endblock %}
+
+{% block layout %}
+    <div class="ui splash padded raised segment">
+        <img class="ui center aligned image" src="/static/images/logo_splash.png"/>
+        <form class="ui {% if form.errors %}error {% endif %}form" method="post" action=".">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            {% include "partials/form_fields.html" with form=form fluid=True %}
+            <div class="form-actions">
+                <button type="submit" class="ui right labeled icon right floated red button">
+                    <i class="right arrow icon"></i>
+                    {% block form-buttons-submit-label %}{% trans 'Login' %}{% endblock %}
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block onbodyload-djangoerp %}
+    $('.ui.splash.segment > .ui.image')
+        .hide()
+        .transition('scale in', '2s');
+{% endblock %}
+

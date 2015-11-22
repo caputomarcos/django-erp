@@ -1,0 +1,4 @@
+<map id="inheritance97d3796d75" name="inheritance97d3796d75">
+<area shape="rect" id="node1" href="#djangoerp.core.middleware.LoggedInUserCacheMiddleware" title="Initialize the user attribute of the LoggedInUserCache class." alt="" coords="5,53,382,77"/>
+<area shape="rect" id="node2" href="#djangoerp.core.middleware.RequireLoginMiddleware" title="Wraps the login_required decorator around matching URL patterns." alt="" coords="27,5,360,29"/>
+</map>

@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+{% load breadcrumbs %}
+{% load avatar %}
+{% load menus %}
+{% load regions %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/default.css' %}"/>
+{% endblock %}
+
+{% block wrapper %}
+    {% block breadcrumbs %}{% endblock %}
+
+    <div id="header" class="ui top fixed inverted menu">
+        <div class="brand header item">
+            {% include "partials/brand.html" %}
+        </div>
+        <div class="ui top left pointing dropdown icon item">
+            <i class="search icon"></i>
+            <div class="ui vertical menu">
+                <div class="ui icon search input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="{% trans 'Search...' %}">
+                </div>
+                <div class="icon item">
+                    <i class="tags icon"></i>
+                    {% trans "Tags" %}
+                    <span class="description">{% blocktrans with count=0 %}{{ count }} item/s{% endblocktrans %}</span>
+                </div>
+                <div class="icon item">
+                    <i class="asterisk icon"></i>
+                    {% trans "Categories" %}
+                    <span class="description">{% blocktrans with count=0 %}{{ count }} item/s{% endblocktrans %}</span>
+                </div>
+            </div>
+        </div>
+        <div class="date item">
+            <div class="content">
+                <i class="tiny calendar icon"></i>
+                <span class="label">{% now "SHORT_DATE_FORMAT" %}</span>
+            </div>
+        </div>
+        <div class="nav icon link item">
+            <i class="chevron left icon"></i>
+        </div>
+        <div class="sidebar icon link item">
+            <i class="bars icon"></i>
+        </div>
+    </div>
+
+    <div id="sidebar" class="ui inverted segment">
+        {% block sidebar %}
+        {% render_region "sidebar" "pluggets/partials/region.html" %}
+        {% endblock %}
+    </div>
+
+    <div class="pusher">
+        {% render_menu "user_area_logged" "menus/partials/menu_userarea.html" %}
+
+        <div id="main" class="ui raised segment">
+            {% block layout %}
+            {% endblock %}
+        </div>
+        
+        {% include "partials/footer.html" %}
+    </div>
+{% endblock %}
+
+{% block onbodyload-semanticui %}
+    {{ block.super }}
+
+    $('.ui.dropdown')
+        .dropdown({
+            transition: 'fade',
+        });
+
+    $('.details.accordion')
+        .accordion({
+            exclusive: false
+        });
+
+    $('.ui.message .close')
+        .on('click', function() {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+
+    $('#sidebar .ui.sticky')
+        .sticky({ context: '.pusher' });
+{% endblock %}
+
+{% block onbodyload-djangoerp %}
+    {{ block.super }}
+
+    $('#header .brand.item > a')
+        .hover(
+
+            // Hover in.
+            function(e) {
+
+                if (!$(this).hasClass("visible")) {
+
+                    $(this).transition('tada');
+                }
+            },
+
+            // Hover out.
+            function(e) {
+
+                $(this).transition('clear queue');
+            }
+        );
+
+    $('#header .sidebar.item')
+        .on('click', function(e) {
+            $(this)
+                .toggleClass('active');
+            $('#sidebar')
+                .toggleClass('visible');
+        });
+
+    $('#header .nav.item')
+        .on('click', function(e) {
+            $(this)
+                .toggleClass('active');
+            $('#header')
+                .toggleClass('collapsed');
+        });
+
+    $('#messages .message')
+        .transition('fly left in');
+
+    $('.about.item')
+        .on('click', $.ajaxRequestLinkInModal);
+
+    $('.logout.item')
+        .on('click', $.ajaxRequestLinkInModal);
+
+    $('.delete.button')
+        .on('click', $.ajaxRequestLinkInModal);
+{% endblock %}

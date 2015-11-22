@@ -1,0 +1,85 @@
+{% load i18n %}
+{% load staticfiles %}
+
+{% language user.language|default:LANGUAGE_CODE %}
+{% get_current_language as lang_code %}
+{% get_current_language_bidi as lang_bidi %}
+
+<!DOCTYPE html>
+<html lang="{{ lang_code }}"{% if lang_bidi %} dir="rtl"{% endif %}>
+    <head>
+        <!-- Standard Meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="{% block meta-charset %}utf-8{% endblock %}">
+        <meta name="viewport" content="{% block meta-viewport %}width=device-width, initial-scale=1{% endblock %}">
+
+        <!-- Site Properities -->
+	    <title>{% block meta-title %}{% endblock %}{% trans "django ERP" %}</title>
+        <link rel="shortcut icon" href="{% block meta-favicon %}{% static 'favicon.ico' %}{% endblock %}">
+        <link rel="stylesheet" href="{% static 'css/semantic.min.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+
+        {% if lang_bidi %}
+        <!-- Right-To-Left modifications -->
+        <link rel="stylesheet" href="{% static 'css/rtl.css' %}"/>
+        {% endif %}
+        
+        <!-- Print layout -->
+        <link rel="stylesheet" href="{% static 'css/print.css' %}" media="print">
+
+        {% block extrastyle %}
+        {% endblock %}
+
+        {% block extraforms %}
+        {% if form %}{{ form.media }}{% endif %}
+        {% if wizard %}{{ wizard.form.media }}{% endif %}
+        {% if media %}{{ media }}{% endif %}
+        {% endblock %}
+
+        {% block extrahead %}
+        {% endblock %}
+    </head>
+    
+    <body class="{% block body-class %}{% endblock %}">
+        {% include "partials/messages.html" %}
+
+        {% block wrapper %}
+        {% endblock %}
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/semantic.min.js' %}"></script>
+        <script src="{% static 'js/ajax.request.js' %}"></script>
+
+        {% block extrascripts %}
+        {% endblock %}
+
+        <script>
+            $(document).on('ready', function(e) {
+                {% block onbodyload %}
+
+                /* Semantic UI stuff */
+
+                {% block onbodyload-semanticui %}
+                    $('.ui.form .field')
+                        .popup();
+                {% endblock %}
+
+                /* django ERP stuff */
+
+                {% block onbodyload-djangoerp %}
+                {% endblock %}
+
+                /* Extra stuff */
+
+                {% block onbodyload-extra %}
+                {% endblock %}
+
+                {% endblock %}
+            });
+        </script>
+        
+    </body>
+    
+</html>
+
+{% endlanguage %}

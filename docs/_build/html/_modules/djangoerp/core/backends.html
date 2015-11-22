@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>djangoerp.core.backends &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../../index.html"/>
+        <link rel="up" title="Código do módulo" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../djangoerp/index.html">Django Erp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../djangoerp/index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Código do módulo</a> &raquo;</li>
+      
+    <li>djangoerp.core.backends</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fonte de djangoerp.core.backends</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+<span class="sd">&quot;&quot;&quot;This file is part of the django ERP project.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="sd">THE SOFTWARE.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Emanuele Bertoldi &lt;emanuele.bertoldi@gmail.com&gt;&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (c) 2013-2015, django ERP Team&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s">&#39;0.0.1&#39;</span>
+
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">get_user_model</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.backends</span> <span class="kn">import</span> <span class="n">ModelBackend</span> <span class="k">as</span> <span class="n">DjangoModelBackend</span>
+
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="o">*</span>
+
+<div class="viewcode-block" id="ModelBackend"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ModelBackend">[documentos]</a><span class="k">class</span> <span class="nc">ModelBackend</span><span class="p">(</span><span class="n">DjangoModelBackend</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A proxy model-level backend.</span>
+<span class="sd">    </span>
+<span class="sd">    NOTE: the purpose of this backend is a better integration with object-level</span>
+<span class="sd">    permissions. By default, &quot;django.contrib.auth.backends.ModelBackend&quot; will</span>
+<span class="sd">    return &quot;False&quot; when &quot;has_perm&quot; is invoked passing an object instance. This</span>
+<span class="sd">    proxy backend, instead, will return &quot;True&quot; if the user has the correct</span>
+<span class="sd">    model-level permission. The idea is that a model-level permission is a</span>
+<span class="sd">    generic permission over all instances, so if the user has a permission on a</span>
+<span class="sd">    model class, this means he has a permission over all its instances.    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="ModelBackend.get_group_permissions"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ModelBackend.get_group_permissions">[documentos]</a>    <span class="k">def</span> <span class="nf">get_group_permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ModelBackend</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_group_permissions</span><span class="p">(</span><span class="n">user_obj</span><span class="p">)</span>
+        </div>
+<div class="viewcode-block" id="ModelBackend.get_all_permissions"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ModelBackend.get_all_permissions">[documentos]</a>    <span class="k">def</span> <span class="nf">get_all_permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ModelBackend</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">get_all_permissions</span><span class="p">(</span><span class="n">user_obj</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ModelBackend.has_perm"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ModelBackend.has_perm">[documentos]</a>    <span class="k">def</span> <span class="nf">has_perm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">perm</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">perm</span><span class="p">,</span> <span class="n">Permission</span><span class="p">):</span>
+            <span class="n">perm</span> <span class="o">=</span> <span class="n">perm</span><span class="o">.</span><span class="n">uid</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ModelBackend</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">has_perm</span><span class="p">(</span><span class="n">user_obj</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="ObjectPermissionBackend"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ObjectPermissionBackend">[documentos]</a><span class="k">class</span> <span class="nc">ObjectPermissionBackend</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Backend which enables support for row/object-level permissions.</span>
+<span class="sd">    </span>
+<span class="sd">    NOTE: this backend only handles row/object-level permissions. It must works</span>
+<span class="sd">    in conjunction which Django&#39;s model backend, not as a replacement. In fact,</span>
+<span class="sd">    if a user has only model-level permissions over a certain model (but no</span>
+<span class="sd">    row/object-level ones for that particular model instance) this backend&#39;s</span>
+<span class="sd">    &quot;has_perm&quot; method will return a negative response.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">supports_object_permissions</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">supports_anonymous_user</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="n">supports_inactive_user</span> <span class="o">=</span> <span class="bp">True</span>
+
+<div class="viewcode-block" id="ObjectPermissionBackend.authenticate"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ObjectPermissionBackend.authenticate">[documentos]</a>    <span class="k">def</span> <span class="nf">authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="c"># This backend doesn&#39;t handle user authentication.</span>
+        <span class="k">return</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="ObjectPermissionBackend.get_user_permissions"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ObjectPermissionBackend.get_user_permissions">[documentos]</a>    <span class="k">def</span> <span class="nf">get_user_permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns all and only the object perms granted to the user_obj itself.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">True</span><span class="p">:</span> <span class="c"># not hasattr(user_obj, &#39;_user_obj_perm_cache&#39;):</span>
+            <span class="n">user_obj</span><span class="o">.</span><span class="n">_user_obj_perm_cache</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">uid</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">objectpermissions</span><span class="o">.</span><span class="n">get_by_object</span><span class="p">(</span><span class="n">obj</span><span class="p">)])</span>
+        <span class="k">return</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">_user_obj_perm_cache</span>
+</div>
+<div class="viewcode-block" id="ObjectPermissionBackend.get_group_permissions"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ObjectPermissionBackend.get_group_permissions">[documentos]</a>    <span class="k">def</span> <span class="nf">get_group_permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns all and only the object perms granted to the groups of the given user_obj.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">True</span><span class="p">:</span> <span class="c"># not hasattr(user_obj, &#39;_group_obj_perm_cache&#39;):</span>
+            <span class="n">perms</span> <span class="o">=</span> <span class="n">ObjectPermission</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_group_permissions</span><span class="p">(</span><span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+            <span class="n">perms</span> <span class="o">=</span> <span class="n">perms</span><span class="o">.</span><span class="n">values_list</span><span class="p">(</span><span class="s">&#39;perm__content_type__app_label&#39;</span><span class="p">,</span> <span class="s">&#39;perm__codename&#39;</span><span class="p">,</span> <span class="s">&#39;object_id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">()</span>
+            <span class="n">user_obj</span><span class="o">.</span><span class="n">_group_obj_perm_cache</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">.</span><span class="si">%s</span><span class="s">.</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ct</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">obj_id</span><span class="p">)</span> <span class="k">for</span> <span class="n">ct</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">perms</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">_group_obj_perm_cache</span>
+</div>
+<div class="viewcode-block" id="ObjectPermissionBackend.get_all_permissions"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ObjectPermissionBackend.get_all_permissions">[documentos]</a>    <span class="k">def</span> <span class="nf">get_all_permissions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns all and only the object perms granted to the given user_obj.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">is_anonymous</span><span class="p">():</span>
+            <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">True</span><span class="p">:</span> <span class="c"># not hasattr(user_obj, &#39;_obj_perm_cache&#39;):</span>
+            <span class="n">user_obj</span><span class="o">.</span><span class="n">_obj_perm_cache</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_user_permissions</span><span class="p">(</span><span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+            <span class="n">user_obj</span><span class="o">.</span><span class="n">_obj_perm_cache</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_group_permissions</span><span class="p">(</span><span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">_obj_perm_cache</span>
+</div>
+<div class="viewcode-block" id="ObjectPermissionBackend.has_perm"><a class="viewcode-back" href="../../../djangoerp/core/backends.html#djangoerp.core.backends.ObjectPermissionBackend.has_perm">[documentos]</a>    <span class="k">def</span> <span class="nf">has_perm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_obj</span><span class="p">,</span> <span class="n">perm</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;This method checks if the user_obj has perm on obj.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">is_superuser</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">user_obj</span><span class="o">.</span><span class="n">is_active</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">perm</span><span class="p">,</span> <span class="n">Permission</span><span class="p">):</span>
+            <span class="n">perm</span> <span class="o">=</span> <span class="n">perm</span><span class="o">.</span><span class="n">uid</span>
+
+        <span class="n">perms</span> <span class="o">=</span> <span class="s">&quot;</span><span class="si">%s</span><span class="s">.</span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">perm</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_all_permissions</span><span class="p">(</span><span class="n">user_obj</span><span class="p">,</span> <span class="n">obj</span><span class="p">)</span>
+        
+        <span class="c"># Fallback to model-level permissions.</span>
+        <span class="c">#if not perms:</span>
+        <span class="c">#    from django.contrib.auth.backends import ModelBackend</span>
+        <span class="c">#    perms = ModelBackend().has_perm(user_obj, perm)</span>
+        
+        <span class="k">return</span> <span class="n">perms</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>apps &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../index.html"/>
+        <link rel="up" title="core - tl;dr" href="index.html"/>
+        <link rel="next" title="backends" href="backends.html"/>
+        <link rel="prev" title="core - tl;dr" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Django Erp</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">core -  tl;dr</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backends.html">backends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cache.html">cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="context_processors.html">context processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorators.html">decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managers.html">managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html"><code class="docutils literal"><span class="pre">models</span></code> &#8211; core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html">middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Django Erp</a> &raquo;</li>
+      
+          <li><a href="index.html">core -  tl;dr</a> &raquo;</li>
+      
+    <li>apps</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/djangoerp/core/apps.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="apps">
+<h1>apps<a class="headerlink" href="#apps" title="Link permanente para este título">¶</a></h1>
+<p class="graphviz">
+<img src="../../_images/inheritance-882f621a2d43cfeca13645fa47cb1ca32d177c2b.png" alt="Inheritance diagram of djangoerp.core.apps" usemap="#inheritance2c80bc5d6c" class="inheritance"/>
+<map id="inheritance2c80bc5d6c" name="inheritance2c80bc5d6c">
+<area shape="rect" id="node1" title="Class representing a Django application and its configuration." alt="" coords="39,5,239,29"/>
+<area shape="rect" id="node2" href="#djangoerp.core.apps.CoreAppConfig" title="Configure app dependencies." alt="" coords="321,29,559,53"/>
+</map>
+</p>
+<span class="target" id="module-djangoerp.core.apps"></span><dl class="class">
+<dt id="djangoerp.core.apps.CoreAppConfig">
+<em class="property">class </em><code class="descclassname">djangoerp.core.apps.</code><code class="descname">CoreAppConfig</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/apps.html#CoreAppConfig"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">djangoerp.core.utils.apps.AppConfigMixin</span></code>, <code class="xref py py-class docutils literal"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<p>Configure app dependencies.</p>
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.check_dependencies">
+<code class="descname">check_dependencies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.check_dependencies" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.check_models_ready">
+<code class="descname">check_models_ready</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.check_models_ready" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Raises an exception if models haven&#8217;t been imported yet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Factory that creates an app config from an entry in INSTALLED_APPS.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.apps.CoreAppConfig.dependencies">
+<code class="descname">dependencies</code><em class="property"> = [u'django.contrib.auth', u'django.contrib.contenttypes', u'django.contrib.sessions', u'django.contrib.sites', u'django.contrib.messages', u'django.contrib.staticfiles', u'django.contrib.redirects', u'formtools']</em><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.dependencies" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.get_model">
+<code class="descname">get_model</code><span class="sig-paren">(</span><em>model_name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.get_model" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the model with the given case-insensitive model_name.</p>
+<p>Raises LookupError if no model exists with this name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.get_models">
+<code class="descname">get_models</code><span class="sig-paren">(</span><em>include_auto_created=False</em>, <em>include_deferred=False</em>, <em>include_swapped=False</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.get_models" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns an iterable of models.</p>
+<p>By default, the following models aren&#8217;t included:</p>
+<ul class="simple">
+<li>auto-created models for many-to-many relations without
+an explicit intermediate table,</li>
+<li>models created to satisfy deferred attribute queries,</li>
+<li>models that have been swapped out.</li>
+</ul>
+<p>Set the corresponding keyword argument to True to include such models.
+Keyword arguments aren&#8217;t documented; they&#8217;re a private API.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.import_models">
+<code class="descname">import_models</code><span class="sig-paren">(</span><em>all_models</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.import_models" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.apps.CoreAppConfig.name">
+<code class="descname">name</code><em class="property"> = u'djangoerp.core'</em><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.name" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.apps.CoreAppConfig.ready">
+<code class="descname">ready</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.ready" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.apps.CoreAppConfig.signals">
+<code class="descname">signals</code><em class="property"> = None</em><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.signals" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.apps.CoreAppConfig.urls">
+<code class="descname">urls</code><em class="property"> = None</em><a class="headerlink" href="#djangoerp.core.apps.CoreAppConfig.urls" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="backends.html" class="btn btn-neutral float-right" title="backends" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="core - tl;dr" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

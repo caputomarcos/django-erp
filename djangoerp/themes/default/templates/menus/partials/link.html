@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load markup %}
+{% load menus %}
+
+{% score_link link request.get_full_path as active_css_class %}
+
+{% block link %}
+    {% if link.submenu %}<div{% else %}<a{% endif %}
+        id="{% block link-id %}{{ link.slug|escape }}-link{% endblock %}"
+        class="{% block link-css %}ui {% if link_css_class %}{{ link_css_class }} {% else %}{{ link.get_title|lower }} {% if link.submenu %}dropdown {% else %}{{ active_css_class }} {% endif %}item{% endif %}{% endblock %}"
+        {% if link.submenu %}><a{% endif %}
+        href="{% block link-url %}{{ link.get_absolute_url }}{% endblock %}"
+        title="{% block link-description %}{% trans link.get_description|default:link.get_title|escape %}{% endblock %}"
+        {% if link.new_window %}target="_blank"{% endif %}
+        >
+            {% block link-icon %}{% if icon or link.icon %}<i class="{{ icon|default:link.get_icon }} icon"></i>{% endif %}{% endblock %}
+            {% block link-title %}{% trans link.get_title|escape %}{% endblock %}
+            {% block link-caret %}{% if link.submenu %}<i class="{% block link-caret-icon %}down caret icon{% endblock %}"></i>{% endif %}{% endblock %}
+        </a>
+        {% if link.submenu %}
+        {% block link-submenu %}{% render_menu link.submenu.slug link.submenu.template_name|default:"menus/partials/submenu.html" %}{% endblock %}
+        </div>
+        {% endif %}
+{% endblock %}
+

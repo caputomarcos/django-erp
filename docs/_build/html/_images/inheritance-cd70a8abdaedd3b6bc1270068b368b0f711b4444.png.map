@@ -1,0 +1,4 @@
+<map id="inheritance501ec4b9f8" name="inheritance501ec4b9f8">
+<area shape="rect" id="node1" href="#djangoerp.core.cache.LoggedInUserCache" title="Stores the current user as a member attribute of a singleton." alt="" coords="5,53,281,77"/>
+<area shape="rect" id="node2" href="#djangoerp.core.cache.Singleton" title="Singleton pattern." alt="" coords="39,5,248,29"/>
+</map>

@@ -1,0 +1,18 @@
+{% load i18n %}
+
+{% if breadcrumbs %}
+{% for crumb, link in breadcrumbs %}
+    {% if not forloop.first %}<div class="divider">/</div>{% endif %}
+    {% if link %}
+    <a class="ui section" href="{{ link }}" title="{% trans crumb %}">
+    {% else %}
+    <div class="active section" title="{% trans crumb %}">
+    {% endif %}
+        {% trans crumb %}
+    {% if link %}
+    </a>
+    {% else %}
+    </div>
+    {% endif %}
+{% endfor %}
+{% endif %}

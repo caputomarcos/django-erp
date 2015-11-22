@@ -1,0 +1,1243 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>managers &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../index.html"/>
+        <link rel="up" title="core - tl;dr" href="index.html"/>
+        <link rel="next" title="models – core" href="models.html"/>
+        <link rel="prev" title="decorators" href="decorators.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Django Erp</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">core -  tl;dr</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apps.html">apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backends.html">backends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cache.html">cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="context_processors.html">context processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorators.html">decorators</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html"><code class="docutils literal"><span class="pre">models</span></code> &#8211; core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html">middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Django Erp</a> &raquo;</li>
+      
+          <li><a href="index.html">core -  tl;dr</a> &raquo;</li>
+      
+    <li>managers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/djangoerp/core/managers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="managers">
+<h1>managers<a class="headerlink" href="#managers" title="Link permanente para este título">¶</a></h1>
+<p class="graphviz">
+<img src="../../_images/inheritance-3ced6fe5073a3fcc03de852e3aad1cb77194c16a.png" alt="Inheritance diagram of djangoerp.core.managers" usemap="#inheritancea8cf0384dd" class="inheritance"/>
+<map id="inheritancea8cf0384dd" name="inheritancea8cf0384dd">
+<area shape="rect" id="node8" href="#djangoerp.core.managers.UserManager" title="Manager for custom User model." alt="" coords="640,2,757,13"/>
+<area shape="rect" id="node6" href="#djangoerp.core.managers.ObjectPermissionManager" title="Custom manager for ObjectPermission model." alt="" coords="459,46,610,57"/>
+<area shape="rect" id="node7" href="#djangoerp.core.managers.PermissionManager" title="Custom manager for Permission model." alt="" coords="632,24,766,35"/>
+</map>
+</p>
+<span class="target" id="module-djangoerp.core.managers"></span><dl class="class">
+<dt id="djangoerp.core.managers.ObjectPermissionManager">
+<em class="property">class </em><code class="descclassname">djangoerp.core.managers.</code><code class="descname">ObjectPermissionManager</code><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Custom manager for ObjectPermission model.</p>
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.aggregate">
+<code class="descname">aggregate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.aggregate" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a dictionary containing the calculations (aggregation)
+over the current queryset</p>
+<p>If args is present the expression is passed as a kwarg using
+the Aggregate object&#8217;s default alias.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.all" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.annotate">
+<code class="descname">annotate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.annotate" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return a query set in which the returned objects have been annotated
+with extra data or aggregations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.bulk_create">
+<code class="descname">bulk_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.bulk_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Inserts each of the instances into the database. This does <em>not</em> call
+save() on each of the instances, does not send any pre/post save
+signals, and does not set the primary key attribute if it is an
+autoincrement field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.complex_filter">
+<code class="descname">complex_filter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.complex_filter" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with filter_obj added to the filters.</p>
+<p>filter_obj can be a Q object (or anything with an add_to_query()
+method) or a dictionary of keyword lookup arguments.</p>
+<p>This exists to support framework features such as &#8216;limit_choices_to&#8217;,
+and usually it will be more natural to use other methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.contribute_to_class">
+<code class="descname">contribute_to_class</code><span class="sig-paren">(</span><em>model</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.contribute_to_class" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.count" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Performs a SELECT COUNT() and returns the number of records as an
+integer.</p>
+<p>If the QuerySet is already fully cached this simply returns the length
+of the cached results set to avoid multiple SELECT COUNT(*) calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Creates a new object with the given kwargs, saving it to the database
+and returning the created object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.creation_counter">
+<code class="descname">creation_counter</code><em class="property"> = 28</em><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.creation_counter" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.dates">
+<code class="descname">dates</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.dates" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of date objects representing all available dates for
+the given field_name, scoped to &#8216;kind&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.datetimes">
+<code class="descname">datetimes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.datetimes" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of datetime objects representing all available
+datetimes for the given field_name, scoped to &#8216;kind&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.db">
+<code class="descname">db</code><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.db_manager">
+<code class="descname">db_manager</code><span class="sig-paren">(</span><em>using=None</em>, <em>hints=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.db_manager" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.deconstruct">
+<code class="descname">deconstruct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.deconstruct" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a 5-tuple of the form (as_manager (True), manager_class,
+queryset_class, args, kwargs).</p>
+<p>Raises a ValueError if the manager is dynamically generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.defer">
+<code class="descname">defer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.defer" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Defers the loading of data for certain fields until they are accessed.
+The set of fields to defer is added to any existing set of deferred
+fields. The only exception to this is if None is passed in as the only
+parameter, in which case all deferrals are removed (None acts as a
+reset option).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.distinct">
+<code class="descname">distinct</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.distinct" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select only distinct results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.earliest">
+<code class="descname">earliest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.earliest" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.exclude">
+<code class="descname">exclude</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.exclude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with NOT (args) ANDed to the existing
+set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.exists">
+<code class="descname">exists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.exists" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.extra">
+<code class="descname">extra</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.extra" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Adds extra SQL fragments to the query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.filter">
+<code class="descname">filter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.filter" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with the args ANDed to the existing
+set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.first">
+<code class="descname">first</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.first" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the first object of a query, returns None if no match is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.from_queryset">
+<code class="descname">from_queryset</code><span class="sig-paren">(</span><em>queryset_class</em>, <em>class_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.from_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Performs the query and returns a single object matching the given
+keyword arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_all_permissions">
+<code class="descname">get_all_permissions</code><span class="sig-paren">(</span><em>user</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_all_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_all_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_by_natural_key">
+<code class="descname">get_by_natural_key</code><span class="sig-paren">(</span><em>codename</em>, <em>app_label</em>, <em>model</em>, <em>object_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_by_natural_key"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_by_natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_by_object">
+<code class="descname">get_by_object</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_by_object"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_by_object" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_by_uid">
+<code class="descname">get_by_uid</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_by_uid"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_by_uid" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_group_permissions">
+<code class="descname">get_group_permissions</code><span class="sig-paren">(</span><em>user</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_group_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_group_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_or_create">
+<code class="descname">get_or_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_or_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Looks up an object with the given kwargs, creating one if necessary.
+Returns a tuple of (object, created), where created is a boolean
+specifying whether an object was created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_or_create_by_natural_key">
+<code class="descname">get_or_create_by_natural_key</code><span class="sig-paren">(</span><em>codename</em>, <em>app_label</em>, <em>model</em>, <em>object_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_or_create_by_natural_key"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_or_create_by_natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_or_create_by_uid">
+<code class="descname">get_or_create_by_uid</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#ObjectPermissionManager.get_or_create_by_uid"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_or_create_by_uid" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.get_queryset">
+<code class="descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.get_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet object.  Subclasses can override this method to
+easily customize the behavior of the Manager.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.in_bulk">
+<code class="descname">in_bulk</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.in_bulk" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a dictionary mapping each of the given IDs to the object with
+that ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.iterator">
+<code class="descname">iterator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.iterator" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>An iterator over the results from applying this QuerySet to the
+database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.last">
+<code class="descname">last</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.last" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the last object of a query, returns None if no match is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.latest">
+<code class="descname">latest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.latest" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.none">
+<code class="descname">none</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.none" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns an empty QuerySet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.only">
+<code class="descname">only</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.only" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Essentially, the opposite of defer. Only the fields passed into this
+method and that are not already specified as deferred are loaded
+immediately when the queryset is evaluated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.order_by">
+<code class="descname">order_by</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.order_by" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with the ordering changed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.prefetch_related">
+<code class="descname">prefetch_related</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.prefetch_related" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will prefetch the specified
+Many-To-One and Many-To-Many related objects when the QuerySet is
+evaluated.</p>
+<p>When prefetch_related() is called more than once, the list of lookups to
+prefetch is appended to. If prefetch_related(None) is called, the list
+is cleared.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.raw">
+<code class="descname">raw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.raw" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.reverse" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reverses the ordering of the QuerySet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.select_for_update">
+<code class="descname">select_for_update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.select_for_update" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select objects with a
+FOR UPDATE lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.select_related">
+<code class="descname">select_related</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.select_related" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select related objects.</p>
+<p>If fields are specified, they must be ForeignKey fields and only those
+related objects are included in the selection.</p>
+<p>If select_related(None) is called, the list is cleared.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.update" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Updates all elements in the current QuerySet, setting all the given
+fields to the appropriate values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.update_or_create">
+<code class="descname">update_or_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.update_or_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Looks up an object with the given kwargs, updating one with defaults
+if it exists, otherwise creates a new one.
+Returns a tuple (object, created), where created is a boolean
+specifying whether an object was created.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.use_in_migrations">
+<code class="descname">use_in_migrations</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.use_in_migrations" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.using">
+<code class="descname">using</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.using" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Selects which database this QuerySet should execute its query against.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.values">
+<code class="descname">values</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.values" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.ObjectPermissionManager.values_list">
+<code class="descname">values_list</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.ObjectPermissionManager.values_list" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.managers.PermissionManager">
+<em class="property">class </em><code class="descclassname">djangoerp.core.managers.</code><code class="descname">PermissionManager</code><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#PermissionManager"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.PermissionManager" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Custom manager for Permission model.</p>
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.aggregate">
+<code class="descname">aggregate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.aggregate" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a dictionary containing the calculations (aggregation)
+over the current queryset</p>
+<p>If args is present the expression is passed as a kwarg using
+the Aggregate object&#8217;s default alias.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.all" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.annotate">
+<code class="descname">annotate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.annotate" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return a query set in which the returned objects have been annotated
+with extra data or aggregations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.bulk_create">
+<code class="descname">bulk_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.bulk_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Inserts each of the instances into the database. This does <em>not</em> call
+save() on each of the instances, does not send any pre/post save
+signals, and does not set the primary key attribute if it is an
+autoincrement field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.complex_filter">
+<code class="descname">complex_filter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.complex_filter" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with filter_obj added to the filters.</p>
+<p>filter_obj can be a Q object (or anything with an add_to_query()
+method) or a dictionary of keyword lookup arguments.</p>
+<p>This exists to support framework features such as &#8216;limit_choices_to&#8217;,
+and usually it will be more natural to use other methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.contribute_to_class">
+<code class="descname">contribute_to_class</code><span class="sig-paren">(</span><em>model</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.contribute_to_class" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.count" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Performs a SELECT COUNT() and returns the number of records as an
+integer.</p>
+<p>If the QuerySet is already fully cached this simply returns the length
+of the cached results set to avoid multiple SELECT COUNT(*) calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Creates a new object with the given kwargs, saving it to the database
+and returning the created object.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.PermissionManager.creation_counter">
+<code class="descname">creation_counter</code><em class="property"> = 28</em><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.creation_counter" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.dates">
+<code class="descname">dates</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.dates" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of date objects representing all available dates for
+the given field_name, scoped to &#8216;kind&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.datetimes">
+<code class="descname">datetimes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.datetimes" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of datetime objects representing all available
+datetimes for the given field_name, scoped to &#8216;kind&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.PermissionManager.db">
+<code class="descname">db</code><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.db_manager">
+<code class="descname">db_manager</code><span class="sig-paren">(</span><em>using=None</em>, <em>hints=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.db_manager" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.deconstruct">
+<code class="descname">deconstruct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.deconstruct" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a 5-tuple of the form (as_manager (True), manager_class,
+queryset_class, args, kwargs).</p>
+<p>Raises a ValueError if the manager is dynamically generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.defer">
+<code class="descname">defer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.defer" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Defers the loading of data for certain fields until they are accessed.
+The set of fields to defer is added to any existing set of deferred
+fields. The only exception to this is if None is passed in as the only
+parameter, in which case all deferrals are removed (None acts as a
+reset option).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.distinct">
+<code class="descname">distinct</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.distinct" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select only distinct results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.earliest">
+<code class="descname">earliest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.earliest" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.exclude">
+<code class="descname">exclude</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.exclude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with NOT (args) ANDed to the existing
+set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.exists">
+<code class="descname">exists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.exists" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.extra">
+<code class="descname">extra</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.extra" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Adds extra SQL fragments to the query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.filter">
+<code class="descname">filter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.filter" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with the args ANDed to the existing
+set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.first">
+<code class="descname">first</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.first" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the first object of a query, returns None if no match is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.from_queryset">
+<code class="descname">from_queryset</code><span class="sig-paren">(</span><em>queryset_class</em>, <em>class_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.from_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Performs the query and returns a single object matching the given
+keyword arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get_by_natural_key">
+<code class="descname">get_by_natural_key</code><span class="sig-paren">(</span><em>codename</em>, <em>app_label</em>, <em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/models.html#PermissionManager.get_by_natural_key"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get_by_natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get_by_uid">
+<code class="descname">get_by_uid</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#PermissionManager.get_by_uid"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get_by_uid" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get_or_create">
+<code class="descname">get_or_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get_or_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Looks up an object with the given kwargs, creating one if necessary.
+Returns a tuple of (object, created), where created is a boolean
+specifying whether an object was created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get_or_create_by_natural_key">
+<code class="descname">get_or_create_by_natural_key</code><span class="sig-paren">(</span><em>codename</em>, <em>app_label</em>, <em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#PermissionManager.get_or_create_by_natural_key"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get_or_create_by_natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get_or_create_by_uid">
+<code class="descname">get_or_create_by_uid</code><span class="sig-paren">(</span><em>uid</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#PermissionManager.get_or_create_by_uid"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get_or_create_by_uid" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.get_queryset">
+<code class="descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.get_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet object.  Subclasses can override this method to
+easily customize the behavior of the Manager.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.in_bulk">
+<code class="descname">in_bulk</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.in_bulk" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a dictionary mapping each of the given IDs to the object with
+that ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.iterator">
+<code class="descname">iterator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.iterator" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>An iterator over the results from applying this QuerySet to the
+database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.last">
+<code class="descname">last</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.last" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the last object of a query, returns None if no match is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.latest">
+<code class="descname">latest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.latest" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.none">
+<code class="descname">none</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.none" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns an empty QuerySet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.only">
+<code class="descname">only</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.only" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Essentially, the opposite of defer. Only the fields passed into this
+method and that are not already specified as deferred are loaded
+immediately when the queryset is evaluated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.order_by">
+<code class="descname">order_by</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.order_by" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with the ordering changed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.prefetch_related">
+<code class="descname">prefetch_related</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.prefetch_related" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will prefetch the specified
+Many-To-One and Many-To-Many related objects when the QuerySet is
+evaluated.</p>
+<p>When prefetch_related() is called more than once, the list of lookups to
+prefetch is appended to. If prefetch_related(None) is called, the list
+is cleared.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.raw">
+<code class="descname">raw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.raw" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.reverse" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reverses the ordering of the QuerySet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.select_for_update">
+<code class="descname">select_for_update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.select_for_update" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select objects with a
+FOR UPDATE lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.select_related">
+<code class="descname">select_related</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.select_related" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select related objects.</p>
+<p>If fields are specified, they must be ForeignKey fields and only those
+related objects are included in the selection.</p>
+<p>If select_related(None) is called, the list is cleared.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.update" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Updates all elements in the current QuerySet, setting all the given
+fields to the appropriate values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.update_or_create">
+<code class="descname">update_or_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.update_or_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Looks up an object with the given kwargs, updating one with defaults
+if it exists, otherwise creates a new one.
+Returns a tuple (object, created), where created is a boolean
+specifying whether an object was created.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.PermissionManager.use_in_migrations">
+<code class="descname">use_in_migrations</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.use_in_migrations" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.using">
+<code class="descname">using</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.using" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Selects which database this QuerySet should execute its query against.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.values">
+<code class="descname">values</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.values" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.PermissionManager.values_list">
+<code class="descname">values_list</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.PermissionManager.values_list" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.managers.UserManager">
+<em class="property">class </em><code class="descclassname">djangoerp.core.managers.</code><code class="descname">UserManager</code><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#UserManager"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.UserManager" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Manager for custom User model.</p>
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.aggregate">
+<code class="descname">aggregate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.aggregate" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a dictionary containing the calculations (aggregation)
+over the current queryset</p>
+<p>If args is present the expression is passed as a kwarg using
+the Aggregate object&#8217;s default alias.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.all">
+<code class="descname">all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.all" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.annotate">
+<code class="descname">annotate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.annotate" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Return a query set in which the returned objects have been annotated
+with extra data or aggregations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.bulk_create">
+<code class="descname">bulk_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.bulk_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Inserts each of the instances into the database. This does <em>not</em> call
+save() on each of the instances, does not send any pre/post save
+signals, and does not set the primary key attribute if it is an
+autoincrement field.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.check">
+<code class="descname">check</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.check" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.complex_filter">
+<code class="descname">complex_filter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.complex_filter" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with filter_obj added to the filters.</p>
+<p>filter_obj can be a Q object (or anything with an add_to_query()
+method) or a dictionary of keyword lookup arguments.</p>
+<p>This exists to support framework features such as &#8216;limit_choices_to&#8217;,
+and usually it will be more natural to use other methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.contribute_to_class">
+<code class="descname">contribute_to_class</code><span class="sig-paren">(</span><em>model</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.contribute_to_class" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.count">
+<code class="descname">count</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.count" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Performs a SELECT COUNT() and returns the number of records as an
+integer.</p>
+<p>If the QuerySet is already fully cached this simply returns the length
+of the cached results set to avoid multiple SELECT COUNT(*) calls.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.create">
+<code class="descname">create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Creates a new object with the given kwargs, saving it to the database
+and returning the created object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.create_superuser">
+<code class="descname">create_superuser</code><span class="sig-paren">(</span><em>username</em>, <em>email</em>, <em>password</em>, <em>**extra_fields</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#UserManager.create_superuser"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.UserManager.create_superuser" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.create_user">
+<code class="descname">create_user</code><span class="sig-paren">(</span><em>username</em>, <em>email</em>, <em>password=None</em>, <em>**extra_fields</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/managers.html#UserManager.create_user"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.managers.UserManager.create_user" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.UserManager.creation_counter">
+<code class="descname">creation_counter</code><em class="property"> = 28</em><a class="headerlink" href="#djangoerp.core.managers.UserManager.creation_counter" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.dates">
+<code class="descname">dates</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.dates" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of date objects representing all available dates for
+the given field_name, scoped to &#8216;kind&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.datetimes">
+<code class="descname">datetimes</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.datetimes" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a list of datetime objects representing all available
+datetimes for the given field_name, scoped to &#8216;kind&#8217;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.UserManager.db">
+<code class="descname">db</code><a class="headerlink" href="#djangoerp.core.managers.UserManager.db" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.db_manager">
+<code class="descname">db_manager</code><span class="sig-paren">(</span><em>using=None</em>, <em>hints=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.db_manager" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.deconstruct">
+<code class="descname">deconstruct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.deconstruct" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a 5-tuple of the form (as_manager (True), manager_class,
+queryset_class, args, kwargs).</p>
+<p>Raises a ValueError if the manager is dynamically generated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.defer">
+<code class="descname">defer</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.defer" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Defers the loading of data for certain fields until they are accessed.
+The set of fields to defer is added to any existing set of deferred
+fields. The only exception to this is if None is passed in as the only
+parameter, in which case all deferrals are removed (None acts as a
+reset option).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.distinct">
+<code class="descname">distinct</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.distinct" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select only distinct results.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.earliest">
+<code class="descname">earliest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.earliest" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.exclude">
+<code class="descname">exclude</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.exclude" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with NOT (args) ANDed to the existing
+set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.exists">
+<code class="descname">exists</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.exists" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.extra">
+<code class="descname">extra</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.extra" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Adds extra SQL fragments to the query.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.filter">
+<code class="descname">filter</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.filter" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with the args ANDed to the existing
+set.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.first">
+<code class="descname">first</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.first" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the first object of a query, returns None if no match is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.from_queryset">
+<code class="descname">from_queryset</code><span class="sig-paren">(</span><em>queryset_class</em>, <em>class_name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.from_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.get" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Performs the query and returns a single object matching the given
+keyword arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.get_by_natural_key">
+<code class="descname">get_by_natural_key</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.get_by_natural_key" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.get_or_create">
+<code class="descname">get_or_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.get_or_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Looks up an object with the given kwargs, creating one if necessary.
+Returns a tuple of (object, created), where created is a boolean
+specifying whether an object was created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.get_queryset">
+<code class="descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.get_queryset" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet object.  Subclasses can override this method to
+easily customize the behavior of the Manager.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.in_bulk">
+<code class="descname">in_bulk</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.in_bulk" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a dictionary mapping each of the given IDs to the object with
+that ID.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.iterator">
+<code class="descname">iterator</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.iterator" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>An iterator over the results from applying this QuerySet to the
+database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.last">
+<code class="descname">last</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.last" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns the last object of a query, returns None if no match is found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.latest">
+<code class="descname">latest</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.latest" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.make_random_password">
+<code class="descname">make_random_password</code><span class="sig-paren">(</span><em>length=10</em>, <em>allowed_chars=u'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789'</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.make_random_password" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Generates a random password with the given length and given
+allowed_chars. Note that the default value of allowed_chars does not
+have &#8220;I&#8221; or &#8220;O&#8221; or letters and digits that look similar &#8211; just to
+avoid confusion.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.none">
+<code class="descname">none</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.none" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns an empty QuerySet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.normalize_email">
+<code class="descname">normalize_email</code><span class="sig-paren">(</span><em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.normalize_email" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Normalize the address by lowercasing the domain part of the email
+address.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.only">
+<code class="descname">only</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.only" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Essentially, the opposite of defer. Only the fields passed into this
+method and that are not already specified as deferred are loaded
+immediately when the queryset is evaluated.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.order_by">
+<code class="descname">order_by</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.order_by" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance with the ordering changed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.prefetch_related">
+<code class="descname">prefetch_related</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.prefetch_related" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will prefetch the specified
+Many-To-One and Many-To-Many related objects when the QuerySet is
+evaluated.</p>
+<p>When prefetch_related() is called more than once, the list of lookups to
+prefetch is appended to. If prefetch_related(None) is called, the list
+is cleared.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.raw">
+<code class="descname">raw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.raw" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.reverse">
+<code class="descname">reverse</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.reverse" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Reverses the ordering of the QuerySet.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.select_for_update">
+<code class="descname">select_for_update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.select_for_update" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select objects with a
+FOR UPDATE lock.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.select_related">
+<code class="descname">select_related</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.select_related" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a new QuerySet instance that will select related objects.</p>
+<p>If fields are specified, they must be ForeignKey fields and only those
+related objects are included in the selection.</p>
+<p>If select_related(None) is called, the list is cleared.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.update" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Updates all elements in the current QuerySet, setting all the given
+fields to the appropriate values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.update_or_create">
+<code class="descname">update_or_create</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.update_or_create" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Looks up an object with the given kwargs, updating one with defaults
+if it exists, otherwise creates a new one.
+Returns a tuple (object, created), where created is a boolean
+specifying whether an object was created.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.managers.UserManager.use_in_migrations">
+<code class="descname">use_in_migrations</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.managers.UserManager.use_in_migrations" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.using">
+<code class="descname">using</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.using" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Selects which database this QuerySet should execute its query against.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.values">
+<code class="descname">values</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.values" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.managers.UserManager.values_list">
+<code class="descname">values_list</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#djangoerp.core.managers.UserManager.values_list" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="models.html" class="btn btn-neutral float-right" title="models – core" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="decorators.html" class="btn btn-neutral" title="decorators" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

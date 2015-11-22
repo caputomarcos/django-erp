@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>backends &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../index.html"/>
+        <link rel="up" title="core - tl;dr" href="index.html"/>
+        <link rel="next" title="cache" href="cache.html"/>
+        <link rel="prev" title="apps" href="apps.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Django Erp</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">core -  tl;dr</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apps.html">apps</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">backends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cache.html">cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="context_processors.html">context processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorators.html">decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managers.html">managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html"><code class="docutils literal"><span class="pre">models</span></code> &#8211; core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html">middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Django Erp</a> &raquo;</li>
+      
+          <li><a href="index.html">core -  tl;dr</a> &raquo;</li>
+      
+    <li>backends</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/djangoerp/core/backends.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="backends">
+<h1>backends<a class="headerlink" href="#backends" title="Link permanente para este título">¶</a></h1>
+<p class="graphviz">
+<img src="../../_images/inheritance-51f727150368c0431d8ec4141031d4d1cb60cf61.png" alt="Inheritance diagram of djangoerp.core.backends" usemap="#inheritance5a61c31054" class="inheritance"/>
+<map id="inheritance5a61c31054" name="inheritance5a61c31054">
+<area shape="rect" id="node1" title="Authenticates against settings.AUTH_USER_MODEL." alt="" coords="27,53,315,77"/>
+<area shape="rect" id="node2" href="#djangoerp.core.backends.ModelBackend" title="A proxy model&#45;level backend." alt="" coords="384,53,647,77"/>
+<area shape="rect" id="node3" href="#djangoerp.core.backends.ObjectPermissionBackend" title="Backend which enables support for row/object&#45;level permissions." alt="" coords="5,5,336,29"/>
+</map>
+</p>
+<span class="target" id="module-djangoerp.core.backends"></span><dl class="class">
+<dt id="djangoerp.core.backends.ModelBackend">
+<em class="property">class </em><code class="descclassname">djangoerp.core.backends.</code><code class="descname">ModelBackend</code><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ModelBackend"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>A proxy model-level backend.</p>
+<p>NOTE: the purpose of this backend is a better integration with object-level
+permissions. By default, &#8220;django.contrib.auth.backends.ModelBackend&#8221; will
+return &#8220;False&#8221; when &#8220;has_perm&#8221; is invoked passing an object instance. This
+proxy backend, instead, will return &#8220;True&#8221; if the user has the correct
+model-level permission. The idea is that a model-level permission is a
+generic permission over all instances, so if the user has a permission on a
+model class, this means he has a permission over all its instances.</p>
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.authenticate">
+<code class="descname">authenticate</code><span class="sig-paren">(</span><em>username=None</em>, <em>password=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/backends.html#ModelBackend.authenticate"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.authenticate" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.get_all_permissions">
+<code class="descname">get_all_permissions</code><span class="sig-paren">(</span><em>user_obj</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ModelBackend.get_all_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.get_all_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.get_group_permissions">
+<code class="descname">get_group_permissions</code><span class="sig-paren">(</span><em>user_obj</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ModelBackend.get_group_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.get_group_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.get_user">
+<code class="descname">get_user</code><span class="sig-paren">(</span><em>user_id</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/backends.html#ModelBackend.get_user"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.get_user" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.get_user_permissions">
+<code class="descname">get_user_permissions</code><span class="sig-paren">(</span><em>user_obj</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/backends.html#ModelBackend.get_user_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.get_user_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns a set of permission strings the user <cite>user_obj</cite> has from their
+<cite>user_permissions</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.has_module_perms">
+<code class="descname">has_module_perms</code><span class="sig-paren">(</span><em>user_obj</em>, <em>app_label</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/django/contrib/auth/backends.html#ModelBackend.has_module_perms"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.has_module_perms" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns True if user_obj has any permissions in the given app_label.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ModelBackend.has_perm">
+<code class="descname">has_perm</code><span class="sig-paren">(</span><em>user_obj</em>, <em>perm</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ModelBackend.has_perm"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ModelBackend.has_perm" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend">
+<em class="property">class </em><code class="descclassname">djangoerp.core.backends.</code><code class="descname">ObjectPermissionBackend</code><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ObjectPermissionBackend"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Backend which enables support for row/object-level permissions.</p>
+<p>NOTE: this backend only handles row/object-level permissions. It must works
+in conjunction which Django&#8217;s model backend, not as a replacement. In fact,
+if a user has only model-level permissions over a certain model (but no
+row/object-level ones for that particular model instance) this backend&#8217;s
+&#8220;has_perm&#8221; method will return a negative response.</p>
+<dl class="method">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.authenticate">
+<code class="descname">authenticate</code><span class="sig-paren">(</span><em>username</em>, <em>password</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ObjectPermissionBackend.authenticate"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.authenticate" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.get_all_permissions">
+<code class="descname">get_all_permissions</code><span class="sig-paren">(</span><em>user_obj</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ObjectPermissionBackend.get_all_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.get_all_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns all and only the object perms granted to the given user_obj.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.get_group_permissions">
+<code class="descname">get_group_permissions</code><span class="sig-paren">(</span><em>user_obj</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ObjectPermissionBackend.get_group_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.get_group_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns all and only the object perms granted to the groups of the given user_obj.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.get_user_permissions">
+<code class="descname">get_user_permissions</code><span class="sig-paren">(</span><em>user_obj</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ObjectPermissionBackend.get_user_permissions"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.get_user_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Returns all and only the object perms granted to the user_obj itself.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.has_perm">
+<code class="descname">has_perm</code><span class="sig-paren">(</span><em>user_obj</em>, <em>perm</em>, <em>obj=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/backends.html#ObjectPermissionBackend.has_perm"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.has_perm" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>This method checks if the user_obj has perm on obj.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.supports_anonymous_user">
+<code class="descname">supports_anonymous_user</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.supports_anonymous_user" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.supports_inactive_user">
+<code class="descname">supports_inactive_user</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.supports_inactive_user" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="djangoerp.core.backends.ObjectPermissionBackend.supports_object_permissions">
+<code class="descname">supports_object_permissions</code><em class="property"> = True</em><a class="headerlink" href="#djangoerp.core.backends.ObjectPermissionBackend.supports_object_permissions" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cache.html" class="btn btn-neutral float-right" title="cache" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="apps.html" class="btn btn-neutral" title="apps" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

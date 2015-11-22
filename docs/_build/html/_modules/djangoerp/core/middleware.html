@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>djangoerp.core.middleware &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../../index.html"/>
+        <link rel="up" title="Código do módulo" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../djangoerp/index.html">Django Erp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../djangoerp/index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Código do módulo</a> &raquo;</li>
+      
+    <li>djangoerp.core.middleware</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Código fonte de djangoerp.core.middleware</h1><div class="highlight"><pre>
+<span class="c">#!/usr/bin/env python</span>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">unicode_literals</span>
+
+<span class="sd">&quot;&quot;&quot;This file is part of the django ERP project.</span>
+
+<span class="sd">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="sd">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="sd">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="sd">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="sd">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="sd">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span class="sd">THE SOFTWARE.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+<span class="kn">from</span> <span class="nn">.cache</span> <span class="kn">import</span> <span class="n">LoggedInUserCache</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Emanuele Bertoldi &lt;emanuele.bertoldi@gmail.com&gt;&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&#39;Copyright (c) 2013-2015, django ERP Team&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s">&#39;0.0.1&#39;</span>
+
+
+<div class="viewcode-block" id="RequireLoginMiddleware"><a class="viewcode-back" href="../../../djangoerp/core/middleware.html#djangoerp.core.middleware.RequireLoginMiddleware">[documentos]</a><span class="k">class</span> <span class="nc">RequireLoginMiddleware</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Wraps the login_required decorator around matching URL patterns.</span>
+<span class="sd">    To use, add the class to MIDDLEWARE_CLASSES and define LOGIN_REQUIRED_URLS</span>
+<span class="sd">    and LOGIN_REQUIRED_URLS_EXCEPTIONS in your settings.py.</span>
+
+<span class="sd">    For example:</span>
+
+<span class="sd">    .. code-block:: python</span>
+
+<span class="sd">        LOGIN_REQUIRED_URLS = (</span>
+<span class="sd">            r&#39;/topsecret/(.*)$&#39;,</span>
+<span class="sd">        )</span>
+<span class="sd">        LOGIN_REQUIRED_URLS_EXCEPTIONS = (</span>
+<span class="sd">            r&#39;/topsecret/login(.*)$&#39;,</span>
+<span class="sd">            r&#39;/topsecret/logout(.*)$&#39;,</span>
+<span class="sd">        )</span>
+
+<span class="sd">    LOGIN_REQUIRED_URLS is where you define URL patterns; each pattern must</span>
+<span class="sd">    be a valid regex.</span>
+
+<span class="sd">    LOGIN_REQUIRED_URLS_EXCEPTIONS is, conversely, where you explicitly</span>
+<span class="sd">    define any exceptions (like login and logout URLs).</span>
+
+<span class="sd">        (Inspired by &lt;http://www.djangosnippets.org/snippets/1220/&gt;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">required</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">LOGIN_REQUIRED_URLS</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">settings</span><span class="o">.</span><span class="n">LOGIN_REQUIRED_URLS_EXCEPTIONS</span><span class="p">])</span>
+
+<div class="viewcode-block" id="RequireLoginMiddleware.process_view"><a class="viewcode-back" href="../../../djangoerp/core/middleware.html#djangoerp.core.middleware.RequireLoginMiddleware.process_view">[documentos]</a>    <span class="k">def</span> <span class="nf">process_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">view_func</span><span class="p">,</span> <span class="n">view_args</span><span class="p">,</span> <span class="n">view_kwargs</span><span class="p">):</span>
+        <span class="c"># No need to process URLs if user already logged in</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">():</span> <span class="k">return</span> <span class="bp">None</span>
+        <span class="c"># An exception match should immediately return None</span>
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">exceptions</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">):</span> <span class="k">return</span> <span class="bp">None</span>
+        <span class="c"># Requests matching a restricted URL pattern are returned </span>
+        <span class="c"># wrapped with the login_required decorator</span>
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">path</span><span class="p">):</span> <span class="k">return</span> <span class="n">login_required</span><span class="p">(</span><span class="n">view_func</span><span class="p">)(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">view_args</span><span class="p">,</span> <span class="o">**</span><span class="n">view_kwargs</span><span class="p">)</span>
+        <span class="c"># Explicitly return None for all non-matching requests</span>
+        <span class="k">return</span> <span class="bp">None</span>
+
+
+<span class="c"># Inspired by http://stackoverflow.com/a/7469395/1063729</span>
+</div></div>
+<div class="viewcode-block" id="LoggedInUserCacheMiddleware"><a class="viewcode-back" href="../../../djangoerp/core/middleware.html#djangoerp.core.middleware.LoggedInUserCacheMiddleware">[documentos]</a><span class="k">class</span> <span class="nc">LoggedInUserCacheMiddleware</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initialize the user attribute of the LoggedInUserCache class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+<div class="viewcode-block" id="LoggedInUserCacheMiddleware.process_request"><a class="viewcode-back" href="../../../djangoerp/core/middleware.html#djangoerp.core.middleware.LoggedInUserCacheMiddleware.process_request">[documentos]</a>    <span class="k">def</span> <span class="nf">process_request</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+        <span class="n">logged_in_user</span> <span class="o">=</span> <span class="n">LoggedInUserCache</span><span class="p">()</span>
+        <span class="n">logged_in_user</span><span class="o">.</span><span class="n">set_user</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">None</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

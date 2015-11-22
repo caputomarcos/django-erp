@@ -1,0 +1,22 @@
+{% extends "default.html" %}
+
+{% block layout %}
+    <header class="ui page-header grid">
+        <div class="row">
+            {% block page-header %}
+            <div class="twelve wide column">
+                {% block page-title %}
+                {% endblock %}
+            </div>
+
+            <div class="four wide column right aligned">
+                {% block page-actions %}
+                {% endblock %}
+            </div>
+            {% endblock %}
+        </div>
+    </header>
+
+    {% block main %}
+    {% endblock %}
+{% endblock %}

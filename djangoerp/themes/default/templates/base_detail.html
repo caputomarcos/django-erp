@@ -1,0 +1,38 @@
+{% extends "page.html" %}
+
+{% load i18n %}
+{% load introspection %}
+{% load menus %}
+
+{% block meta-title %}
+    {{ object|striptags|capfirst }}
+{% endblock %}
+
+{% block page-title %}
+    <h1 class="ui header">
+        {% block page-main-title %}
+            {{ object|striptags|capfirst }}
+        {% endblock %}
+        <div class="sub header">
+        {% block page-sub-title %}
+            {% trans "Saved" as label %}
+            {% include "partials/status_label.html" with colour="green" label=label %}
+        {% endblock %}
+        </div>
+    </h1>
+{% endblock %}
+
+{% block page-actions %}
+    {% with action_menu_slug=object|raw_model_name|add:"_detail_actions" %}{% render_menu action_menu_slug "menus/partials/menu_actions.html" %}{% endwith %}
+{% endblock %}
+
+{% block main %}
+    {% with nav_menu_slug=object|raw_model_name|add:"_detail_navigation" %}
+        {% render_menu nav_menu_slug "menus/partials/menu_tabs.html" %}
+        {% get_menu_links nav_menu_slug as nav_menu_links %}
+        <div class="ui {% block main-details-segment-css %}{% endblock %} clearing attached padded segment">
+            {% block main-details %}
+            {% endblock %}
+        </div>
+    {% endwith %}
+{% endblock %}

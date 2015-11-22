@@ -1,0 +1,269 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>middleware &mdash; Django ERP 0.0.0 documentação</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Django ERP 0.0.0 documentação" href="../../index.html"/>
+        <link rel="up" title="core - tl;dr" href="index.html"/>
+        <link rel="prev" title="settings" href="settings.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Django ERP
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Django Erp</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">core -  tl;dr</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="apps.html">apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backends.html">backends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cache.html">cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="context_processors.html">context processors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorators.html">decorators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="managers.html">managers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html"><code class="docutils literal"><span class="pre">models</span></code> &#8211; core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">settings</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">middleware</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Django ERP</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Django Erp</a> &raquo;</li>
+      
+          <li><a href="index.html">core -  tl;dr</a> &raquo;</li>
+      
+    <li>middleware</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/djangoerp/core/middleware.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="middleware">
+<h1>middleware<a class="headerlink" href="#middleware" title="Link permanente para este título">¶</a></h1>
+<p class="graphviz">
+<img src="../../_images/inheritance-f20a04bcda1d16fcffead718277404158ffd09f5.png" alt="Inheritance diagram of djangoerp.core.middleware" usemap="#inheritance97d3796d75" class="inheritance"/>
+<map id="inheritance97d3796d75" name="inheritance97d3796d75">
+<area shape="rect" id="node1" href="#djangoerp.core.middleware.LoggedInUserCacheMiddleware" title="Initialize the user attribute of the LoggedInUserCache class." alt="" coords="5,53,382,77"/>
+<area shape="rect" id="node2" href="#djangoerp.core.middleware.RequireLoginMiddleware" title="Wraps the login_required decorator around matching URL patterns." alt="" coords="27,5,360,29"/>
+</map>
+</p>
+<span class="target" id="module-djangoerp.core.middleware"></span><dl class="class">
+<dt id="djangoerp.core.middleware.LoggedInUserCacheMiddleware">
+<em class="property">class </em><code class="descclassname">djangoerp.core.middleware.</code><code class="descname">LoggedInUserCacheMiddleware</code><a class="reference internal" href="../../_modules/djangoerp/core/middleware.html#LoggedInUserCacheMiddleware"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.middleware.LoggedInUserCacheMiddleware" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Initialize the user attribute of the LoggedInUserCache class.</p>
+<dl class="staticmethod">
+<dt id="djangoerp.core.middleware.LoggedInUserCacheMiddleware.process_request">
+<em class="property">static </em><code class="descname">process_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/middleware.html#LoggedInUserCacheMiddleware.process_request"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.middleware.LoggedInUserCacheMiddleware.process_request" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="djangoerp.core.middleware.RequireLoginMiddleware">
+<em class="property">class </em><code class="descclassname">djangoerp.core.middleware.</code><code class="descname">RequireLoginMiddleware</code><a class="reference internal" href="../../_modules/djangoerp/core/middleware.html#RequireLoginMiddleware"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.middleware.RequireLoginMiddleware" title="Link permanente para esta definição">¶</a></dt>
+<dd><p>Wraps the login_required decorator around matching URL patterns.
+To use, add the class to MIDDLEWARE_CLASSES and define LOGIN_REQUIRED_URLS
+and LOGIN_REQUIRED_URLS_EXCEPTIONS in your settings.py.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">LOGIN_REQUIRED_URLS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">r&#39;/topsecret/(.*)$&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">LOGIN_REQUIRED_URLS_EXCEPTIONS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">r&#39;/topsecret/login(.*)$&#39;</span><span class="p">,</span>
+    <span class="s">r&#39;/topsecret/logout(.*)$&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>LOGIN_REQUIRED_URLS is where you define URL patterns; each pattern must
+be a valid regex.</p>
+<p>LOGIN_REQUIRED_URLS_EXCEPTIONS is, conversely, where you explicitly
+define any exceptions (like login and logout URLs).</p>
+<blockquote>
+<div>(Inspired by &lt;<a class="reference external" href="http://www.djangosnippets.org/snippets/1220/">http://www.djangosnippets.org/snippets/1220/</a>&gt;)</div></blockquote>
+<dl class="method">
+<dt id="djangoerp.core.middleware.RequireLoginMiddleware.process_view">
+<code class="descname">process_view</code><span class="sig-paren">(</span><em>request</em>, <em>view_func</em>, <em>view_args</em>, <em>view_kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/djangoerp/core/middleware.html#RequireLoginMiddleware.process_view"><span class="viewcode-link">[código fonte]</span></a><a class="headerlink" href="#djangoerp.core.middleware.RequireLoginMiddleware.process_view" title="Link permanente para esta definição">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="settings.html" class="btn btn-neutral" title="settings" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Emanuele Bertoldi.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

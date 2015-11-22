@@ -24,7 +24,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group
     Permission as DjangoPermission
 
 from .managers import *
-from .. import settings
+from django.conf import settings
 
 __author__ = 'Emanuele Bertoldi <emanuele.bertoldi@gmail.com>'
 __copyright__ = 'Copyright (c) 2013-2015, django ERP Team'

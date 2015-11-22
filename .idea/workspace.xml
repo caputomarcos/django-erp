@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb0385c7-d68d-4b10-9682-d8c7865262ad" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/forms/widgets.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/management.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templates/elements/breadcrumbs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templates/elements/empty.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templates/elements/link.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templates/elements/no.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templates/elements/yes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templatetags/modelfuncs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/templatetags/strfuncs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/djangoerp/core/utils/rendering.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/__init__.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/templatetags/__init__.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/templatetags/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/__init__.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/admin.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/apps.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/apps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/decorators.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/forms.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/loading.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/loading.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/make.bat" afterPath="$PROJECT_DIR$/docs/make.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/models.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/pluggets.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/pluggets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/templatetags/regions.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/templatetags/regions.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/settings.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/signals.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/signals.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_apps.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_apps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_decorators.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_decorators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_forms.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_loading.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_loading.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/core/tests/test_middlewares.py" afterPath="$PROJECT_DIR$/djangoerp/core/tests/test_middlewares.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_models.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_pluggets.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_pluggets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_signals.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_signals.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/core/tests/test_templatetags.py" afterPath="$PROJECT_DIR$/djangoerp/core/tests/test_templatetags.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/menus/tests/test_templatetags.py" afterPath="$PROJECT_DIR$/djangoerp/menus/tests/test_templatetags.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_templatetags.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_templatetags.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_utils.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/core/tests/test_views.py" afterPath="$PROJECT_DIR$/djangoerp/core/tests/test_views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_views.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/tests/test_views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/core/tests/urls.py" afterPath="$PROJECT_DIR$/djangoerp/core/tests/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/urls.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/utils.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/pluggets/views.py" afterPath="$PROJECT_DIR$/djangoerp/pluggets/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/djangoerp/core/models.py" afterPath="$PROJECT_DIR$/djangoerp/core/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="django-erp.iws" />
@@ -69,36 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="test_models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/djangoerp/pluggets/tests/test_models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_loading.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/djangoerp/pluggets/tests/test_loading.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="25" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/djangoerp/pluggets/tests/test_forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="37" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_decorators.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/djangoerp/pluggets/tests/test_decorators.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,11 +75,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39473686">
-              <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/djangoerp/core/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5180921">
+              <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -177,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docs/djangoerp/core/decorators.rst" />
         <option value="$PROJECT_DIR$/docs/djangoerp/core/cache.rst" />
         <option value="$PROJECT_DIR$/docs/djangoerp/core/backends.rst" />
         <option value="$PROJECT_DIR$/docs/conf.py" />
@@ -228,6 +173,7 @@
         <option value="$PROJECT_DIR$/djangoerp/core/views.py" />
         <option value="$PROJECT_DIR$/djangoerp/pluggets/views.py" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/djangoerp/core/models.py" />
       </list>
     </option>
   </component>
@@ -320,6 +266,38 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="django-erp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="django-erp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="djangoerp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="django-erp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="djangoerp">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="core">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -789,14 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/djangoerp/menus/tests/test_templatetags.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.259259">
@@ -1063,8 +1033,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39473686">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/djangoerp/settings/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75328946">
+          <caret line="232" column="0" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/djangoerp/core/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5180921">
+          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
           <folding />
         </state>
       </provider>

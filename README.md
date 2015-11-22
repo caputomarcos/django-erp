@@ -1,7 +1,7 @@
 ![django ERP](http://django-erp.github.io/website/static/logo.png "django ERP")
 ===============================================================================
 
-[![Build Status](https://travis-ci.org/django-erp/django-erp.svg?branch=develop)](https://travis-ci.org/django-erp/django-erp)
+[![Build Status](https://api.travis-ci.org/caputomarcos/django-erp.svg?branch=develop)](https://travis-ci.org/caputomarcos/django-erp)
 
 **Django ERP** is an _open-source_, _user-oriented_, *ERP system* based on [Django](http://www.djangoproject.com) framework.
 
